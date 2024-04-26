@@ -1,0 +1,147 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(circle, rgb(255, 253, 189) 0%, rgb(255, 210, 114) 100%);
+  margin: 0;
+}
+
+.underwater {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: url(../../images/gradient.png) repeat-x;
+  background-size: 100% 100%;
+}
+
+.clouds {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+.clouds .cloud {
+  top: 1rem;
+  width: 20rem;
+  position: absolute;
+  opacity: 0.5;
+  animation: clouds infinite linear;
+  filter: drop-shadow(0 0 0.75rem rgba(156, 153, 110, 0.4117647059));
+}
+.clouds .cloud:nth-child(2n) {
+  animation-direction: reverse;
+}
+.clouds .cloud:nth-child(1) {
+  animation-duration: 15s;
+  scale: 1.25;
+  top: 3rem;
+}
+.clouds .cloud:nth-child(2) {
+  animation-duration: 20s;
+  scale: 1.5;
+  top: 6rem;
+}
+.clouds .cloud:nth-child(3) {
+  animation-duration: 25s;
+  scale: 1.75;
+  top: 9rem;
+}
+.clouds .cloud:nth-child(4) {
+  animation-duration: 30s;
+  scale: 2;
+  top: 12rem;
+}
+.clouds .cloud:nth-child(5) {
+  animation-duration: 35s;
+  scale: 2.25;
+  top: 15rem;
+}
+.clouds .cloud:nth-child(6) {
+  animation-duration: 40s;
+  scale: 2.5;
+  top: 18rem;
+}
+
+.heading {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 10rem;
+  text-align: center;
+  text-shadow: 2px 2px 0px #888737;
+  color: #9c996e;
+}
+
+header {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+main {
+  height: 200vh;
+  position: relative;
+  background-color: #0092ba;
+}
+
+.boat {
+  position: absolute;
+  width: 30rem;
+  left: 10vw;
+  bottom: 0;
+  transform: scaleX(-1);
+  animation: bob 2.8s ease-in-out infinite;
+}
+.boat img {
+  animation: float 2s ease-in-out infinite;
+  transform-origin: center bottom;
+  width: 100%;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  bottom: -1rem;
+  height: 10rem;
+  background: url(../../images/waves.png) repeat-x;
+  background-size: 1800px 50px;
+  animation: bgscroll 10s infinite linear;
+}
+
+@keyframes clouds {
+  0% {
+    left: -40rem;
+  }
+  100% {
+    left: calc(100% + 21rem);
+  }
+}
+@keyframes bgscroll {
+  from {
+    background-position: 1800px bottom;
+  }
+  to {
+    background-position: 0 bottom;
+  }
+}
+@keyframes float {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  60% {
+    transform: rotate(2deg);
+  }
+}
+@keyframes bob {
+  0%, 100% {
+    bottom: -0.5rem;
+  }
+  60% {
+    bottom: -1rem;
+  }
+}
