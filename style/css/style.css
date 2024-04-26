@@ -4,7 +4,6 @@ body {
 }
 
 body {
-  background: radial-gradient(circle, rgb(255, 253, 189) 0%, rgb(255, 210, 114) 100%);
   margin: 0;
 }
 
@@ -19,57 +18,54 @@ body {
 .clouds {
   position: absolute;
   width: 100%;
+  height: 100%;
   top: 0;
 }
-.clouds .cloud {
+.clouds__cloud {
   top: 1rem;
   width: 20rem;
   position: absolute;
   opacity: 0.5;
   animation: clouds infinite linear;
-  filter: drop-shadow(0 0 0.75rem rgba(156, 153, 110, 0.4117647059));
 }
-.clouds .cloud:nth-child(2n) {
+.clouds__cloud:nth-child(2n) {
   animation-direction: reverse;
 }
-.clouds .cloud:nth-child(1) {
+.clouds__cloud:nth-child(1) {
   animation-duration: 15s;
+  animation-delay: -20s;
   scale: 1.25;
-  top: 3rem;
+  top: 4rem;
 }
-.clouds .cloud:nth-child(2) {
+.clouds__cloud:nth-child(2) {
   animation-duration: 20s;
+  animation-delay: -40s;
   scale: 1.5;
-  top: 6rem;
+  top: 8rem;
 }
-.clouds .cloud:nth-child(3) {
+.clouds__cloud:nth-child(3) {
   animation-duration: 25s;
+  animation-delay: -60s;
   scale: 1.75;
-  top: 9rem;
-}
-.clouds .cloud:nth-child(4) {
-  animation-duration: 30s;
-  scale: 2;
   top: 12rem;
 }
-.clouds .cloud:nth-child(5) {
+.clouds__cloud:nth-child(4) {
+  animation-duration: 30s;
+  animation-delay: -80s;
+  scale: 2;
+  top: 16rem;
+}
+.clouds__cloud:nth-child(5) {
   animation-duration: 35s;
+  animation-delay: -100s;
   scale: 2.25;
-  top: 15rem;
+  top: 20rem;
 }
-.clouds .cloud:nth-child(6) {
+.clouds__cloud:nth-child(6) {
   animation-duration: 40s;
+  animation-delay: -120s;
   scale: 2.5;
-  top: 18rem;
-}
-
-.heading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: 0;
-  transform: translate(-50%, -50%);
-  width: 50vw;
+  top: 24rem;
 }
 
 header {
@@ -77,6 +73,18 @@ header {
   height: 80vh;
   width: 100%;
   overflow: hidden;
+  background: radial-gradient(circle, #fffdbd 0%, #ffd272 100%);
+}
+
+.heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  width: 50vw;
+  transform-origin: top left;
+  transform: translate(-50%, -50%);
+  animation: heading 2s ease-in-out;
 }
 
 main {
@@ -90,13 +98,15 @@ main {
   width: 30rem;
   left: 10vw;
   bottom: 0;
-  transform: scaleX(-1);
   animation: bob 2.8s ease-in-out infinite;
 }
-.boat img {
+.boat__image {
   animation: float 2s ease-in-out infinite;
   transform-origin: center bottom;
   width: 100%;
+}
+.boat__image img {
+  transform: scaleX(-1);
 }
 
 .wave {
@@ -135,9 +145,17 @@ main {
 }
 @keyframes bob {
   0%, 100% {
-    bottom: -0.5rem;
+    bottom: -0.75rem;
   }
   60% {
-    bottom: -1rem;
+    bottom: -1.5rem;
+  }
+}
+@keyframes heading {
+  0% {
+    transform: scale(0) translate(-50%, -50%);
+  }
+  100% {
+    transform: scale(1) translate(-50%, -50%);
   }
 }

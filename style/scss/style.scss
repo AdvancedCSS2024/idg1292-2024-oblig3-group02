@@ -6,7 +6,6 @@ body {
 }
 
 body {
-  background: radial-gradient(circle, rgba(255, 253, 189, 1) 0%, rgba(255, 210, 114, 1) 100%);
   margin: 0;
 }
 
@@ -14,6 +13,10 @@ body {
   height: 100%;
   width: 100%;
   position: absolute;
+  // This is to make the gradient. found it on stack overflow a while ago.
+  // Tpperantly the best way to make a gradient smooth but the issue remains
+  // due to displays color range. not sure if this will stay as its kinda heavy.
+  // I am planning on making stages that are darker and use paralaxing instead.
   background: url(../../images/gradient.png) repeat-x;
   background-size: 100% 100%;
 }
@@ -21,37 +24,30 @@ body {
 .clouds {
   position: absolute;
   width: 100%;
+  height: 100%;
   top: 0;
 
-  .cloud {
+  &__cloud {
     top: 1rem;
     width: 20rem;
     position: absolute;
     opacity: 0.5;
     animation: clouds infinite linear;
-    filter: drop-shadow(0 0 0.75rem #9c996e69);
     &:nth-child(2n) {
       animation-direction: reverse;
     }
   }
-
+  // bad attempt at making the clouds more random. they start of looking kinda shit but gets better after the animation
+  // runs a few times. this could probably be done in js but this should be more efficent.
   @for $i from 1 through 6 {
-    .cloud:nth-child(#{$i}) {
+    &__cloud:nth-child(#{$i}) {
       animation-duration: #{10 + $i * 5}s;
+      animation-delay: -#{$i * 20}s;
       scale: #{1 + $i * .25};
-      top: #{$i * 3}rem;
+      top: #{$i * 4}rem;
     }
   }
 
-}
-
-.heading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: 0;
-  transform: translate(-50%, -50%);
-  width: 50vw;
 }
 
 header {
@@ -59,6 +55,18 @@ header {
   height: 80vh;
   width: 100%;
   overflow: hidden;
+  background: radial-gradient(circle, #fffdbd 0%, #ffd272 100%);
+}
+
+.heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  width: 50vw;
+  transform-origin: top left;
+  transform: translate(-50%, -50%);
+  animation: heading 2s ease-in-out;
 }
 
 main {
@@ -72,13 +80,14 @@ main {
   width: 30rem;
   left: 10vw;
   bottom: 0;
-  transform: scaleX(-1);
   animation: bob 2.8s ease-in-out infinite;
-
-  img {
+  &__image {
     animation: float 2s ease-in-out infinite;
     transform-origin: center bottom;
     width: 100%;
+    img {
+      transform: scaleX(-1);
+    }
   }
 }
 
@@ -129,10 +138,19 @@ main {
 
   0%,
   100% {
-    bottom: -.5rem;
+    bottom: -.75rem;
   }
 
   60% {
-    bottom: -1rem;
+    bottom: -1.5rem;
+  }
+}
+
+@keyframes heading {
+  0% {
+    transform: scale(0) translate(-50%, -50%);
+  }
+  100% {
+   transform: scale(1) translate(-50%, -50%);
   }
 }
