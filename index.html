@@ -5,14 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/css/style.css">
-    <link rel="preload" as="image" src="images/waves.png">
-    <link rel="preload" as="image" src="images/svg/boat.svg">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.js" defer integrity="sha512-mmWi33jFMC7mTR1zHkLjFTtkd/Teg2AH+lCYeb8TLvjUoJbAiDdM+tE+YURnXD144kgR6514PDxFBzcAilrvLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="scripts/style.js" defer></script>
     <title>Document</title>
 </head>
 
 <body>
 
-    <header>
+    <header class="header">
+        <div class="mountain">
+            <img src="images/svg/mountain.svg">
+        </div>
         <div class="heading">
             <img src="images/svg/heading.svg">
         </div>
@@ -36,8 +42,9 @@
     </header>
 
     <main>
-        <div class="underwater">
-        </div>
+      <div class="sprite"></div>
+      <div class="underwater">
+      </div>
     </main>
 
 </body>
