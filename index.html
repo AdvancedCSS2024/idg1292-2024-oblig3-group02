@@ -9,7 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.js" defer integrity="sha512-mmWi33jFMC7mTR1zHkLjFTtkd/Teg2AH+lCYeb8TLvjUoJbAiDdM+tE+YURnXD144kgR6514PDxFBzcAilrvLQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="scripts/style.js" defer></script>
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/diver.js" defer></script>
     <title>Document</title>
 </head>
 
@@ -41,9 +42,10 @@
         <div class="wave"></div>
     </header>
 
-    <main>
-      <div class="sprite"></div>
-      <div class="underwater">
+    <main id="main">
+      <div id="underwater" class="underwater">
+        <div id="sprite" class="sprite"></div>
+        <div class="collider"></div>
       </div>
     </main>
 

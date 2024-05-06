@@ -54,12 +54,14 @@ main {
 
 .underwater {
   height: 100%;
-  width: 100%;
+  width: 300%;
+  border: #000000 dotted 2px;
   position: absolute;
   top: 0;
   z-index: 999;
   opacity: 0.5;
   background: linear-gradient(0deg, #000000 0%, #0092ba 100%);
+  transition: transform 0.5s ease;
 }
 
 .mountain {
@@ -150,6 +152,7 @@ main {
   height: 200vh;
   position: relative;
   background-color: #0092ba;
+  overflow-x: hidden;
 }
 
 .boat {
@@ -199,4 +202,15 @@ main {
   background-repeat: no-repeat;
   background-size: 788.5px 356px;
   position: absolute;
+  border: solid 3px green;
+}
+
+.collider {
+  position: absolute;
+  min-width: 30rem;
+  height: 60rem;
+  border: red solid 3px;
+  left: 30rem;
+  pointer-events: none;
+  z-index: 1000;
 }
