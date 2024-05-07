@@ -10,6 +10,8 @@ let transform = 0
 let prevMouseX = 0;
 let prevMouseY = 0;
 
+let mouseY = 0;
+
 // Keyframes for sprite animation
 const keyframes = [
     { backgroundPosition: `-205px 0px`, duration: 0.1, ease: "steps(1)" },
@@ -21,6 +23,16 @@ const keyframes = [
     { backgroundPosition: `-613px -123px`, duration: 0.1, ease: "steps(1)" },
     { backgroundPosition: `6px -271px`, duration: 0.1, ease: "steps(1)" },
 ];
+
+function scrollMouse() { 
+    if (mouseY < 100) {
+        window.scrollBy(0, -3);
+    }
+
+    if (mouseY > window.innerHeight - 100) {
+        window.scrollBy(0, 3);
+    }
+}
 
 // Function to check for collisions between player and colliders
 function checkCollisions() {
@@ -99,11 +111,18 @@ function updateDiverPosition() {
 
     // Update sprite and playerbox position
     sprite.style.left = adjustedPosX + 'px';
-    sprite.style.top = adjustedPosY + 'px';
     playerbox.style.left = adjustedPosX + 'px';
-    playerbox.style.top = adjustedPosY + 'px';
+    if (adjustedPosY < 150) {
+        playerbox.style.top = '150px';
+        sprite.style.top = '150px';
+    } else {
+        playerbox.style.top = adjustedPosY + 'px';
+        sprite.style.top = adjustedPosY + 'px';
+    }
+    
 
-    // Request next animation frame
+    scrollMouse()
+
     requestAnimationFrame(updateDiverPosition);
 }
 
@@ -112,6 +131,7 @@ main.addEventListener('mousemove', (e) => {
     const rect = main.getBoundingClientRect();
     prevMouseX = e.clientX - rect.left + Math.abs(transform);
     prevMouseY = e.clientY - rect.top;
+    mouseY = e.clientY;
 });
 
 // Start updating player position
