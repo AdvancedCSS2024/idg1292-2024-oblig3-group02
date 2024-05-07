@@ -38,30 +38,23 @@
     transform: scale(1) translate(-50%, -50%);
   }
 }
-html,
-body {
-  height: 100%;
+html {
+  font-size: 62.5%;
 }
 
 body {
   margin: 0;
-  height: fit-content;
-}
-
-main {
-  background-color: #0092ba;
 }
 
 .underwater {
-  height: 100%;
-  width: 300%;
+  width: 100vw;
   border: #000000 dotted 2px;
   position: absolute;
   top: 0;
+  height: 200rem;
   z-index: 999;
-  opacity: 0.5;
-  background: linear-gradient(0deg, #000000 0%, #0092ba 100%);
-  transition: transform 0.5s ease;
+  opacity: 0.7;
+  background: #7dc6d4;
 }
 
 .mountain {
@@ -149,10 +142,11 @@ header {
 }
 
 main {
-  height: 200vh;
+  width: 100vw;
   position: relative;
   background-color: #0092ba;
   overflow-x: hidden;
+  height: 200rem;
 }
 
 .boat {
@@ -205,12 +199,14 @@ main {
   border: solid 3px green;
 }
 
-.collider {
+.map_obj {
   position: absolute;
-  min-width: 30rem;
-  height: 60rem;
+}
+.map_obj img {
+  width: 100%;
+}
+
+.collider {
   border: red solid 3px;
-  left: 30rem;
-  pointer-events: none;
   z-index: 1000;
 }
