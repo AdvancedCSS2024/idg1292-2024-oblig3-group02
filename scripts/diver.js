@@ -41,50 +41,36 @@ function moveUnderwater(direction) {
 // Define the checkCollisions function
 function checkCollisions() {
     const spriteBound = sprite.getBoundingClientRect();
+    let collisionDetected = false;
 
     // Loop through all colliders
-    for (const collider of colliders) {
-        const colliderBound = collider.getBoundingClientRect();
-
-        // Calculate the center of the sprite
-        const spriteCenterX = spriteBound.left + spriteBound.width * 0.5;
-        const spriteCenterY = spriteBound.top + spriteBound.height * 0.5;
-
-        // Calculate the center of the collider
-        const colliderCenterX = colliderBound.left + colliderBound.width * 0.5;
-        const colliderCenterY = colliderBound.top + colliderBound.height * 0.5;
-
-        // Calculate the width and height offsets
-        const wOff = (spriteBound.width + colliderBound.width) * 0.5;
-        const hOff = (spriteBound.height + colliderBound.height) * 0.5;
-
-        // Collision occurs when sprite and collider are separated on neither x nor y axes
-        if (Math.abs(spriteCenterX - colliderCenterX) < wOff && Math.abs(spriteCenterY - colliderCenterY) < hOff) {
-            return true;
+    colliders.forEach(collider => {
+        const path = collider.querySelector('path');
+        if (path) {
+            // Check if the sprite's boundary intersects with the path
+            if (isCollidingWithBoundary(spriteBound, path)) {
+                console.log("Collision detected with collider:", collider);
+                collisionDetected = true;
+            }
+        } else {
+            console.error("Collider does not contain a path element:", collider);
         }
-    }
-    return false;
+    });
+
+    return collisionDetected;
 }
 
-// Event listener for mouse movement
-document.addEventListener("mousemove", function(event) {
-    var mouseX = event.clientX;
-    var screenWidth = window.innerWidth;
+function isCollidingWithBoundary(spriteBound, path) {
+    // Get the bounding box of the SVG path
+    const pathBound = path.getBoundingClientRect();
 
-    if (mouseX < offset) {
-        clearInterval(intervalId); // Clear the previous interval (if any)
-        intervalId = setInterval(function() {
-            moveUnderwater('left');
-        }, 50); // Adjust the interval duration as needed
-    } else if (mouseX > screenWidth - offset) {
-        clearInterval(intervalId); // Clear the previous interval (if any)
-        intervalId = setInterval(function() {
-            moveUnderwater('right');
-        }, 50); // Adjust the interval duration as needed
-    } else {
-        clearInterval(intervalId); // Clear the interval if mouse is not close to the edges
-    }
-});
+    // Check if there's any overlap between the sprite's boundary and the path bounding box
+    return !(spriteBound.right < pathBound.left ||
+             spriteBound.left > pathBound.right ||
+             spriteBound.bottom < pathBound.top ||
+             spriteBound.top > pathBound.bottom);
+}
+
 
 main.addEventListener('mousemove', (e) => {
     const rect = main.getBoundingClientRect();
@@ -114,10 +100,10 @@ function updateDiverPosition() {
         sprite.style.transform += ' scaleY(-1)';
     }
 
-    sprite.style.left = newPosX + 'px';
-    sprite.style.top = newPosY + 'px';
     // Update sprite's position
     if (!checkCollisions()) {
+            sprite.style.left = newPosX + 'px';
+    sprite.style.top = newPosY + 'px';
         sprite.style.border = '3px solid green';
     } else {
         sprite.style.border = '3px solid red';
