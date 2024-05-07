@@ -149,3 +149,68 @@ main {
     width: 100%;
   }
 }
+.collider {
+  position: relative;
+}
+
+h1 {
+  color: white;
+  font-family: calibri, sans-serif;
+  font-size: 2vw;
+  opacity: 0.6;
+}
+.overfishing {
+  position: absolute; 
+  display: flex;
+  width: 70%; 
+  height: 70%; 
+  left: 50%; 
+  top: 50%; 
+  transform: translate(-50%, -50%);
+}
+.plastic {
+  font-size: 1vw;
+  position: absolute; 
+  display: flex;
+  width: 70%; 
+  height: 70%; 
+  left: 50%; 
+  top: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.shipping {
+  font-size: 1.5vw;
+  opacity: 0.5;
+  position: absolute; 
+  display: flex;
+  width: 30%; 
+  height: 70%; 
+  left: 63%; 
+  top: 70%; 
+  transform: translate(-50%, -50%);
+}
+
+.temperature {
+  font-size: 1.6vw;
+  opacity: 0.3;
+  position: absolute; 
+  display: flex;
+  width: 30%; 
+  height: 70%; 
+  left: 20%; 
+  top: 35%; 
+  transform: translate(-50%, -50%);
+}
+
+.oil {
+  font-size: 1.6vw;
+  opacity: 0.3;
+  position: absolute; 
+  display: flex;
+  width: 25%; 
+  height: 70%; 
+  left: 72%;
+  top: 75%; 
+  transform: translate(-50%, -50%);
+}
