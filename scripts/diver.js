@@ -20,7 +20,6 @@ const keyframes = [
     { backgroundPosition: `-410px -128px`, duration: 0.1, ease: "steps(1)" },
     { backgroundPosition: `-613px -123px`, duration: 0.1, ease: "steps(1)" },
     { backgroundPosition: `6px -271px`, duration: 0.1, ease: "steps(1)" },
-    { backgroundPosition: `-201px -271px`, duration: 0.1, ease: "steps(1)" }
 ];
 
 // Function to check for collisions between player and colliders
