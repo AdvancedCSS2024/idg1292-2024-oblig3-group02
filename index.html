@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/css/style.css">
+    <link rel="stylesheet" href="style/css/style.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -45,27 +45,29 @@
     <main id="main">
         <div id="underwater" class="underwater">
 
-
             <div class="map_obj" style="bottom: 0; width: 100%;">
                 <img src="images/SVG/bg.svg">
             </div>
 
+            <div id="playerbox"></div>
+            <div id="sprite" class="sprite"></div>
+
             <div class="map_obj" style="bottom: 0; width: 100%;">
+                <div class="collider" style="width: 100%; height: 70%; bottom: 0; position: absolute;"></div>
                 <img src="images/SVG/cave_bottom.svg">
             </div>
 
-            <div class="collider map_obj" style="left: 0; top: 30rem; width: 60%;">
-                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1790.03 881.6">
-                    <path class="cls-1" d="M-55.99,150.57c130.99,43.16,378.1-38.39,559,0,410,87,845.94,13.45,1008.05-70.08,55.37-25.98,186.7-83.7,180.95,53.08-2.27,130.28-108.73,119.64-61.42,247,5.58,15.03,36.64,35.32,44.25,89.27,1.84,13.05,1.92,26.28.55,39.38l-4.53,43.35c-21.66,54.73-74.17,68.51-131.99,81.19-53.12,11.65-106.11,22.07-160.9,28.15-81.19,9.43-166.04,10.46-246.37,26.41-49.87,9.39-463.63,121.25-1187.6,92.25V150.57Z"/>
-                  </svg>
+            <div class="map_obj" style="left: 0; top: 50rem; width: 60%;">
+                <div class="collider" style="margin: 10% 10% 0 0; width: 90%; height: 60%; position: absolute;"></div>
+                <img src="images/SVG/cave_left.svg">
             </div>
 
             <div class="map_obj" style="right: 0; top: 50rem; width: 14%;"> 
+                <div class="collider" style="margin: 10% 0 0 10%; width: 90%; height: 28%; position: absolute;"></div>
+                <div class="collider" style="margin: 100% 0 0 60%; width: 40%; height: 60%; position: absolute;"></div>
                 <img src="images/SVG/cave_right.svg">
             </div>
-            
-            <div id="sprite" class="sprite"></div>
-            
+
         </div>
     </main>
 

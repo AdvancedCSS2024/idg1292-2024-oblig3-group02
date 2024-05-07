@@ -3,6 +3,12 @@
 // best seen at 1500px or less
 html {
   font-size: 62.5%;
+  overflow-y: scroll;
+}
+
+* {
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 body {
@@ -10,14 +16,10 @@ body {
 }
 
 .underwater {
-  width: 100vw;
-  border: #000000 dotted 2px;
+  width: 100%;
   position: absolute;
   top: 0;
-  height: 200rem;
-  z-index: 999;
-  opacity: 0.7;
-  background: #7dc6d4;
+  height: 100%;
 }
 
 .mountain {
@@ -61,7 +63,7 @@ header {
   height: 80vh;
   width: 100%;
   overflow: hidden;
-  background: radial-gradient(circle, rgba(255,251,150,1) 18%, rgba(134,217,201,1) 19%, rgba(134,217,193,1) 47%);
+  background: radial-gradient(circle, #fffb96 18%, #86cfd9 19%, #5da9ac 47% );
 }
 
 .heading {
@@ -79,7 +81,7 @@ header {
 main {
   width: 100vw;
   position: relative;
-  background-color: #0092ba;
+  background-color: rgb(84, 194, 224);
   overflow-x: hidden;
   height: 200rem;
 }
@@ -132,7 +134,13 @@ main {
   background-repeat: no-repeat;
   background-size: calc(3154px / 4) calc(1068px / 3);
   position: absolute;
-  border: solid 3px green;
+}
+
+#playerbox {
+  position: absolute;
+  width: 10rem;
+  transform: translate(-50%, -50%);
+  height: 10rem;
 }
 
 .map_obj {
@@ -140,9 +148,4 @@ main {
   img {
     width: 100%;
   }
-}
-
-.collider {
-  border: red solid 3px;
-  z-index: 1000;
 }
