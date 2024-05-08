@@ -1,12 +1,21 @@
 @media screen and (max-width: 768px) {
     p {
-      font-size: 2.5vw; /* Adjust font size for smaller screens */
+      font-size: 2.5vw; 
     }
   }
   
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 540px) {
     p {
-      font-size: 4vw; /* Further adjust font size for narrower screens */
+      font-size: 4vw; 
+    }
+    #whale {
+      position: absolute;
+      height: 20vh;
+      width: auto;
+      opacity: 0.2;
+      top: 40%;
+      right: 10%;
+      transform: scaleX(-1);
     }
   }
   
