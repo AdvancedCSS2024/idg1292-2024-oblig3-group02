@@ -12,17 +12,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.js" defer
-        integrity="sha512-mmWi33jFMC7mTR1zHkLjFTtkd/Teg2AH+lCYeb8TLvjUoJbAiDdM+tE+YURnXD144kgR6514PDxFBzcAilrvLQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="scripts/script.js" defer></script>
-    <script src="scripts/diver.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.js"></script>
     <title>Document</title>
 </head>
 
 <body>
 
-    <header class="header">
+    <header id="header">
         <div class="mountain">
             <img src="images/svg/mountain.svg">
         </div>
@@ -44,15 +40,14 @@
                 <img src="images/svg/boat.svg">
             </div>
         </div>
-
+        <button id="cta" onclick="hideHeader()">cta</button>
         <div class="wave"></div>
     </header>
 
     <main id="main">
-        <div class="overlay"></div>
+        
         <div id="underwater" class="underwater">
-            <img id="bottle" src="images/SVG/ocean/Bottle.svg">
-            <img id="bottletwo" src="images/SVG/ocean/bottle2.svg">
+
             <div class="jellyFamily">
                 <img id="jellyFish" class="backgroundFish" src="images/SVG/ocean/JellyFish1.svg">
                 <img id="jellyFishTwo" class="backgroundFish" src="images/SVG/ocean/JellyFish2.svg">
@@ -99,9 +94,14 @@
                 <img src="images/SVG/cave_right.svg">
             </div>
 
+            <div id="gradient-container">
+                <!-- Content here -->
+              </div>              
+              
         </div>
     </main>
-
+    <script src="scripts/diver.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
