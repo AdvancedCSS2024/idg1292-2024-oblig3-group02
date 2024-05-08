@@ -145,3 +145,9 @@ updateDiverPosition();
 // Start sprite animation
 gsap.fromTo(sprite, { keyframes: keyframes }, { keyframes: keyframes, repeat: -1 });
 
+
+const tetraFish = document.getElementById('tetraFish');
+tetraFish.addEventListener('animationiteration', () => {
+    tetraFish.classList.toggle('swim-back');
+});
+

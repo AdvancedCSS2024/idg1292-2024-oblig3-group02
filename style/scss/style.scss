@@ -214,3 +214,173 @@ h1 {
   top: 75%; 
   transform: translate(-50%, -50%);
 }
+
+.backgroundFish {
+  height: 100px;
+  width: auto;
+}
+
+
+#whale {
+  position: absolute;
+  height: 20vh;
+  width: auto;
+  opacity: 0.2;
+  top: 55%;
+  right: 20%;
+  transform: scaleX(-1);
+}
+
+.mantaFamily {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  height: 300px;
+  opacity: 0.6;
+  padding: 1%;
+}
+
+
+#shark {
+  position: absolute;
+  top: 70%;
+  left: 5%;
+  opacity: 0.5;
+}
+
+@keyframes swim-one {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10%);
+  }
+}
+
+@keyframes swim-two {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10%);
+  }
+}
+
+@keyframes swim-three {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10%);
+  }
+}
+
+#mantaRay {
+  animation: swim-one 5s infinite;
+  position: absolute;
+  top: 40%;
+  right: 20%;
+  height: 25%;
+  width: auto;
+}
+
+#mantaRayOne {
+  animation: swim-two 6s infinite;
+  height: 40%;
+  width: auto;
+}
+
+#mantaRayTwo {
+  animation: swim-three 4s infinite;
+}
+
+.jellyFamily {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  height: 300px;
+  width: 300px;
+  opacity: 0.6;
+  padding: 1%;
+
+}
+
+#jellyFish {
+  position: absolute;
+  animation: swim-jelly-one 5s infinite;
+  top: 50%;
+  right: 40%;
+}
+#jellyFishTwo {
+  position: absolute;
+  transform: scaleX(-1);
+  animation: swim-jelly-two 6s infinite;
+  right: 50%;
+}
+
+#jellyFishThree {
+  position: absolute;
+  animation: swim-jelly-three 4s infinite;
+  top: 46%;
+}
+
+@keyframes swim-jelly-one {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10%);
+  }
+}
+
+@keyframes swim-jelly-two {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-12%);
+  }
+}
+
+@keyframes swim-jelly-three {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-8%);
+  }
+}
+
+
+@keyframes swim-right {
+  0% {
+      transform: translateX(0);
+  }
+  99% {
+      transform: translateX(calc(100vw - 100px)); /* Assuming the width of the fish is 100px */
+  }
+  100% {
+      transform: translateX(calc(100vw - 100px)) scaleX(1);
+  }
+}
+
+@keyframes swim-left {
+  0% {
+      transform: translateX(calc(100vw - 100px)) scaleX(1);
+  }
+  1% {
+      transform: translateX(calc(100vw - 100px)) scaleX(-1);
+  }
+  100% {
+      transform: translateX(0) scaleX(-1);
+  }
+}
+
+#tetraFish {
+  position: absolute;
+  animation: swim-right 5s linear infinite; /* Adjust the duration as needed */
+}
+
+#tetraFish.swim-back {
+  animation: swim-left 5s linear forwards; /* Adjust the duration as needed */
+}
