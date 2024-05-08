@@ -1,9 +1,9 @@
 // Retrieve necessary elements from the DOM
-const sprite = document.querySelector('#sprite');
 const main = document.querySelector('#main');
+const sprite = document.querySelector('#sprite');
+const playerbox = document.querySelector('#playerbox');
 const underwater = document.querySelector("#underwater");
 const colliders = document.querySelectorAll('.collider');
-const playerbox = document.querySelector('#playerbox');
 let transform = 0
 
 // Define variables for movement and transformation
@@ -59,7 +59,7 @@ function checkCollisions() {
                 point.y >= colliderRect.top &&
                 point.y <= colliderRect.bottom
             ) {
-                // Determine the side of collision
+                // Determine the side the player colided with. this is also known as nightmare fuel
                 const dx = Math.min(Math.abs(point.x - colliderRect.left), Math.abs(point.x - colliderRect.right));
                 const dy = Math.min(Math.abs(point.y - colliderRect.top), Math.abs(point.y - colliderRect.bottom));
                 if (dx < dy) {
@@ -80,7 +80,7 @@ function checkCollisions() {
 function updateDiverPosition() {
     const speed = 0.008; // Movement speed
 
-    // Calculate new position based on mouse movement
+    // Calculate new position to move the caracter based on mouse movement
     const newPosX = (1 - speed) * parseFloat(sprite.style.left || sprite.offsetLeft) + speed * prevMouseX;
     const newPosY = (1 - speed) * parseFloat(sprite.style.top || sprite.offsetTop) + speed * prevMouseY;
     const dx = prevMouseX - parseFloat(sprite.style.left || sprite.offsetLeft);
@@ -90,28 +90,32 @@ function updateDiverPosition() {
     // Set sprite rotation
     sprite.style.transform = `translate(-50%, -50%) rotate(${angle}rad)`;
 
-    // Flip sprite if necessary
+    // Flip sprite to prevent them from swimming upside down.
     if (angle > Math.PI / 2 || angle < -Math.PI / 2) {
         sprite.style.transform += ' scaleY(-1)';
     }
 
-    // Check for collisions
+    // Check if the player has colided and wich side they colided on to move the player away from the colider. 
+    // The reason we are getting the collition side and doing all that is in hope to try to make the colitions feel better.
+    // previously i just locked the players movement on colition and it made the coliders feel sticky.
     const { xCollision, yCollision, xCollisionSide, yCollisionSide } = checkCollisions();
 
     let adjustedPosX = newPosX;
     let adjustedPosY = newPosY;
 
     if (xCollision) {
-        adjustedPosX += xCollisionSide === 'left' ? 5 : -5; // Move a tiny bit away from the collider
+        adjustedPosX += xCollisionSide === 'left' ? 5 : -5; // Move the player 5 pixels away from the collider if they collide on x
     }
 
     if (yCollision) {
-        adjustedPosY += yCollisionSide === 'top' ? 5 : -5; // Move a tiny bit away from the collider
+        adjustedPosY += yCollisionSide === 'top' ? 5 : -5; // Move the player 5 pixels away from the collider if they collide on Y
     }
 
     // Update sprite and playerbox position
     sprite.style.left = adjustedPosX + 'px';
     playerbox.style.left = adjustedPosX + 'px';
+
+    // this is just a stupid fix to stop the player from peaking over the water edge.
     if (adjustedPosY < 150) {
         playerbox.style.top = '150px';
         sprite.style.top = '150px';
@@ -120,7 +124,8 @@ function updateDiverPosition() {
         sprite.style.top = adjustedPosY + 'px';
     }
     
-
+    // runs the scroll mouse function to move the player up or down 
+    // depending on the position of the mouse to the bottom or top of the screen. 
     scrollMouse()
 
     requestAnimationFrame(updateDiverPosition);
