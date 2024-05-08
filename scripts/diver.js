@@ -4,8 +4,8 @@ const sprite = document.querySelector('#sprite');
 const playerbox = document.querySelector('#playerbox');
 const underwater = document.querySelector("#underwater");
 const colliders = document.querySelectorAll('.collider');
-let transform = 0; 
 let mouseOverMain = false
+let transform = 0; 
 
 // Define variables for movement and transformation
 let prevInputX = 0;
@@ -15,7 +15,7 @@ function scrollInput() {
     const spriteRect = sprite.getBoundingClientRect();
     const spriteCenterY = spriteRect.top + spriteRect.height / 2;
     const windowHeight = window.innerHeight;
-    const scrollThreshold = 150; // Adjust this value as needed
+    const scrollThreshold = window.innerHeight * 0.4;
 
     // Scroll up if the sprite is above the threshold
     if (spriteCenterY < scrollThreshold && mouseOverMain) {
@@ -134,11 +134,6 @@ function updateDiverPosition() {
         playerbox.style.top = adjustedPosY + 'px';
         sprite.style.top = adjustedPosY + 'px';
     }
-    
-    // Runs the scrollInput function to move the player up or down 
-    // depending on the position of the input to the bottom or top of the screen. 
-
-
     requestAnimationFrame(updateDiverPosition, scrollInput());
 }
 

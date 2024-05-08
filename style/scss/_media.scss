@@ -1,0 +1,12 @@
+@media screen and (max-width: 768px) {
+    p {
+      font-size: 2.5vw; /* Adjust font size for smaller screens */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    p {
+      font-size: 4vw; /* Further adjust font size for narrower screens */
+    }
+  }
+  
