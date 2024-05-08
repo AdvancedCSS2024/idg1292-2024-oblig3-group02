@@ -163,7 +163,7 @@ main {
   position: relative;
 }
 
-.mantaFamily {
+.manta {
   position: absolute;
   top: 6%;
   right: 6%;
@@ -174,7 +174,7 @@ main {
 }
 
 //Large jellyfish familiy
-.jellyFamily {
+.jelly {
   position: absolute;
   top: 0;
   left: 10%;
@@ -185,7 +185,7 @@ main {
 }
 
 //small jellyfish family
-.jellyFamilyTwo {
+.jelly__two {
   position: absolute;
   top: 60%;
   right: 0%;
@@ -281,131 +281,10 @@ main {
   opacity: 0.5;
 }
 
-#mantaRay {
-  animation: swim-one 5s infinite linear;
-  position: absolute;
-  top: 30%;
-  right: 20%;
-  height: 10vw;
-  width: auto;
-}
-
-#mantaRayOne {
-  animation: swim-two 6s infinite linear;
-  height: 7vw;
-  width: auto;
-}
-
-#mantaRayTwo {
-  height: 5vw;
-  animation: swim-three 4s infinite linear;
-}
-
-#jellyFish {
-  position: absolute;
-  animation: swim-jelly-one 5s infinite;
-  height: 7vw;
-  width: auto;
-  top: 40%;
-  right: 35%;
-}
-#jellyFishTwo {
-  position: absolute;
-  height: 6vw;
-  width: auto;
-  top: 20%;
-  transform: scaleX(-1);
-  animation: swim-jelly-two 6s infinite;
-  right: 50%;
-}
-
-#jellyFishThree {
-  height: 8vw;
-  position: absolute;
-  animation: swim-jelly-three 4s infinite;
-  left: 20%;
-  top: 46%;
-}
-
-#jellyFishFour {
-  position: absolute;
-  animation: swim-jelly-one 5s infinite;
-  height: 4.5vw;
-  top: 30%;
-  right: 45%;
-}
-
-#jellyFishFive {
-  position: absolute;
-  transform: scaleX(-1);
-  height: 5vw;
-  animation: swim-jelly-two 6s infinite;
-  right: 50%;
-  top: 5%;
-}
-
-#jellyFishSix {
-  position: absolute;
-  height: 4vw;
-  animation: swim-jelly-three 4s infinite;
-  top: 30%;
-  left: 30%;
-}
-
 #tetraFish {
   position: absolute;
   animation: swim-back 5s linear infinite;
 }
-
-
-#bottle {
-  height: 6vw;
-  transform: rotate(45deg);
-  width: auto;
-  position: absolute;
-  left: 60%;
-  top: 45%;
-  opacity: 0.5;
-}
-
-#bottletwo {
-  height: 6vw;
-  transform: rotate(-45deg);
-  width: auto;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  opacity: 0.3;
-}
-
-#soda {
-  height: 6vw;
-  transform: rotate(-25deg);
-  width: auto;
-  position: absolute;
-  left: 45%;
-  top: 70%;
-  opacity: 0.7;
-}
-
-#deadFish {
-  height: 3vw;
-  width: auto;
-  position: absolute;
-  left: 80%;
-  top: 45%;
-  opacity: 0.5;
-}
-
-#deadFishTwo {
-  height: 4vw;
-  transform: rotate(120deg);
-  position: absolute;
-  left: 70%;
-  top: 40%;
-  opacity: 0.5;
-}
-
 
 @media screen and (max-width: 768px) {
   p {
