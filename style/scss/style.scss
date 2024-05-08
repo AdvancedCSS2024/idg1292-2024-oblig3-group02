@@ -348,32 +348,53 @@ main {
 
 
 #bottle {
-  height: 100px;
-  width: auto;
-  position: absolute;
-  left: 40%;
-}
-
-#bottletwo {
-  height: 100px;
-  width: auto;
-  position: absolute;
-  left: 50%;
-}
-
-#soda {
-  height: 100px;
+  height: 6vw;
+  transform: rotate(45deg);
   width: auto;
   position: absolute;
   left: 60%;
+  top: 45%;
+  opacity: 0.5;
+}
+
+#bottletwo {
+  height: 6vw;
+  transform: rotate(-45deg);
+  width: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  opacity: 0.3;
+}
+
+#soda {
+  height: 6vw;
+  transform: rotate(-25deg);
+  width: auto;
+  position: absolute;
+  left: 45%;
+  top: 70%;
+  opacity: 0.7;
 }
 
 #deadFish {
-  height: 100px;
+  height: 3vw;
   width: auto;
   position: absolute;
-  left: 70%;
+  left: 80%;
+  top: 45%;
+  opacity: 0.5;
 }
+
+#deadFishTwo {
+  height: 4vw;
+  transform: rotate(120deg);
+  position: absolute;
+  left: 70%;
+  top: 40%;
+  opacity: 0.5;
+}
+
 
 @media screen and (max-width: 768px) {
   p {
