@@ -15,7 +15,7 @@ function scrollInput() {
     const spriteRect = sprite.getBoundingClientRect();
     const spriteCenterY = spriteRect.top + spriteRect.height / 2;
     const windowHeight = window.innerHeight;
-    const scrollThreshold = 150; // Adjust this value as needed
+    const scrollThreshold = window.innerHeight * 0.4; // Adjust this value as needed
 
     // Scroll up if the sprite is above the threshold
     if (spriteCenterY < scrollThreshold && mouseOverMain) {
