@@ -154,9 +154,10 @@ main {
 
 .mantaFamily {
   position: absolute;
-  top: 10%;
-  right: 10%;
-  height: 300px;
+  top: 6%;
+  right: 6%;
+  height: 30vw;
+  width: 30vw;
   opacity: 0.6;
   padding: 1%;
 }
@@ -164,26 +165,21 @@ main {
 //Large jellyfish familiy
 .jellyFamily {
   position: absolute;
-  top: 10%;
+  top: 0;
   left: 10%;
-  height: 300px;
-  width: 300px;
+  height: 30vw;
+  width: 30vw;
   opacity: 0.6;
   padding: 1%;
-}
-
-.backgroundFish {
-  height: 100px;
-  width: auto;
 }
 
 //small jellyfish family
 .jellyFamilyTwo {
   position: absolute;
   top: 60%;
-  right: 10%;
-  height: 300px;
-  width: 300px;
+  right: 0%;
+  height: 30vh;
+  width: 30vw;
   opacity: 0.3;
   padding: 1%;
 }
@@ -268,7 +264,8 @@ main {
 
 #shark {
   position: absolute;
-  top: 70%;
+  height: 8vw;
+  top: 60%;
   left: 5%;
   opacity: 0.5;
 }
@@ -276,64 +273,72 @@ main {
 #mantaRay {
   animation: swim-one 5s infinite linear;
   position: absolute;
-  top: 40%;
+  top: 30%;
   right: 20%;
-  height: 25%;
+  height: 10vw;
   width: auto;
 }
 
 #mantaRayOne {
   animation: swim-two 6s infinite linear;
-  height: 40%;
+  height: 7vw;
   width: auto;
 }
 
 #mantaRayTwo {
+  height: 5vw;
   animation: swim-three 4s infinite linear;
 }
 
 #jellyFish {
   position: absolute;
   animation: swim-jelly-one 5s infinite;
-  top: 50%;
-  right: 40%;
+  height: 7vw;
+  width: auto;
+  top: 40%;
+  right: 35%;
 }
 #jellyFishTwo {
   position: absolute;
+  height: 6vw;
+  width: auto;
+  top: 20%;
   transform: scaleX(-1);
   animation: swim-jelly-two 6s infinite;
   right: 50%;
 }
 
 #jellyFishThree {
+  height: 8vw;
   position: absolute;
   animation: swim-jelly-three 4s infinite;
+  left: 20%;
   top: 46%;
 }
 
 #jellyFishFour {
   position: absolute;
   animation: swim-jelly-one 5s infinite;
-  top: 40%;
-  right: 40%;
-  height:20%;
+  height: 4.5vw;
+  top: 30%;
+  right: 45%;
 }
 
 #jellyFishFive {
   position: absolute;
   transform: scaleX(-1);
+  height: 5vw;
   animation: swim-jelly-two 6s infinite;
   right: 50%;
-  top: 10%;
-  height: 20%;
+  top: 5%;
 }
 
 #jellyFishSix {
   position: absolute;
+  height: 4vw;
   animation: swim-jelly-three 4s infinite;
-  top: 36%;
-  left: 14%;
-  height:20%;
+  top: 30%;
+  left: 30%;
 }
 
 #tetraFish {
@@ -341,3 +346,125 @@ main {
   animation: swim-back 5s linear infinite;
 }
 
+
+#bottle {
+  height: 100px;
+  width: auto;
+  position: absolute;
+  left: 40%;
+}
+
+#bottletwo {
+  height: 100px;
+  width: auto;
+  position: absolute;
+  left: 50%;
+}
+
+#soda {
+  height: 100px;
+  width: auto;
+  position: absolute;
+  left: 60%;
+}
+
+#deadFish {
+  height: 100px;
+  width: auto;
+  position: absolute;
+  left: 70%;
+}
+
+@media screen and (max-width: 768px) {
+  p {
+    font-size: 2.5vw; 
+  }
+  #whale {
+    position: absolute;
+    height: 20vw;
+    width: auto;
+    opacity: 0.2;
+    top: 40%;
+    left: 5%;
+    transform: scaleX(1);
+  }
+  .jellyFamily {
+    position: absolute;
+    top: 40vw;
+    left: 10%;
+    height: 30vw;
+    width: 30vw;
+    opacity: 0.6;
+    padding: 1%;
+  }
+
+  .mantaFamily {
+    position: absolute;
+    top: 30vw;
+    right: 6%;
+    height: 30vw;
+    width: 30vw;
+    opacity: 0.6;
+    padding: 1%;
+  }
+  .jellyFamilyTwo {
+    position: absolute;
+    top: 60%;
+    right: 10%;
+    height: 30vw;
+    width: 30vw;
+    opacity: 0.3;
+    padding: 1%;
+  }
+  #shark {
+    position: absolute;
+    height: 8vw;
+    top: 50%;
+    left: 55%;
+    opacity: 0.5;
+    transform: scaleX(-1);
+  }
+}
+
+@media screen and (max-width: 540px) {
+  p {
+    font-size: 4vw; 
+  }
+  #whale {
+    position: absolute;
+    height: 20vw;
+    width: auto;
+    opacity: 0.2;
+    top: 40%;
+    left: 5%;
+    transform: scaleX(1);
+  }
+
+  .jellyFamily {
+    position: absolute;
+    top: 60vw;
+    left: 10%;
+    height: 30vw;
+    width: 30vw;
+    opacity: 0.6;
+    padding: 1%;
+  }
+
+  .mantaFamily {
+    position: absolute;
+    top: 50vw;
+    right: 6%;
+    height: 30vw;
+    width: 30vw;
+    opacity: 0.6;
+    padding: 1%;
+  }
+  #shark {
+    position: absolute;
+    height: 8vw;
+    top: 50%;
+    left: 55%;
+    opacity: 0.5;
+    transform: scaleX(-1);
+  }
+}
