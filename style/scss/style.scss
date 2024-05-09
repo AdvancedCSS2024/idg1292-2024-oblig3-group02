@@ -19,7 +19,7 @@ body {
 p {
   color: white;
   font-family: calibri, sans-serif;
-  font-size: 2.25vw; /* Base font size as percentage of viewport width */
+  font-size: 2vw; 
   opacity: 0.6;
   font-weight: 600;
 }
@@ -49,7 +49,7 @@ main {
   position: relative;
   background-color: #54c2e0;
   overflow-x: hidden;
-  height: 200rem;
+  height: 400rem;
 }
 
 .heading {
@@ -260,11 +260,46 @@ main {
 
 #oil {
   position: absolute; 
-  display: flex;
   width: 25%; 
-  height: 70%; 
+  height: 35vh; 
+  left: 72%;
+  top: 20%; 
+  transform: translate(-50%, -50%);
+}
+
+#habitats {
+  position: absolute; 
+  width: 45%; 
+  height: 35vh; 
+  left: 25%;
+  top: 40%; 
+  transform: translate(-50%, -50%);
+}
+
+#species {
+  position: absolute; 
+  width: 50%; 
+  height: 35vh; 
   left: 72%;
   top: 55%; 
+  transform: translate(-50%, -50%);
+}
+
+#climate {
+  position: absolute; 
+  width: 50%; 
+  height: 35vh; 
+  left: 27%;
+  top: 70%; 
+  transform: translate(-50%, -50%);
+}
+
+#solution {
+  position: absolute; 
+  width: 50%; 
+  height: 35vh; 
+  left: 50%;
+  top: 80%; 
   transform: translate(-50%, -50%);
 }
 
