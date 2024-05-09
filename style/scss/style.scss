@@ -15,7 +15,7 @@ body {
 }
 
 p {
-  font-size: 1.3vw;
+  font-size: 1.3rem;
   opacity: 0.6;
   font-weight: 600;
   text-align: center;
@@ -43,11 +43,6 @@ p {
   height: 10rem;
   transform: translate(-50%, -50%);
 }
-
-.collider {
-  position: absolute;
-}
-
 .header {
   height: 100vh;
   width: 100%;
@@ -114,8 +109,6 @@ p {
     }
   }
 
-  // bad attempt at making the clouds more random. they start of looking kinda shit but gets better after the animation
-  // runs a few times. this could probably be done in js but this should be more efficent.
   @for $i from 1 through 6 {
     &__cloud:nth-child(#{$i}) {
       opacity: #{$i / 7};
@@ -130,14 +123,16 @@ p {
 .underwater {
   background-color: #54c2e0;
   position: absolute;
+  width: 100%;
 
   &__text {
     width: 100%;
+    margin-top: 50rem;
     p {
-      margin: 10rem auto;
+      width: 70%;
+      margin: 20rem auto;
     }
   }
-
   &__bubble {
     position: absolute;
     width: 50px;
@@ -149,20 +144,30 @@ p {
 
   &__item {
     position: absolute;
-
     img {
       width: 100%;
     }
-
     &--whale {
       width: 50%;
       top: 30%;
       left: 10%;
     }
-
     &--shark {
       top: 50%;
       right: 10%;
+    }
+    &--rock-left {
+      top: 10%;
+      left: 0;
+      width: 60%;
+    }
+    &--rock-right {
+      top: 10%;
+      right: 0;
+      width: 10%;
+    }
+    &--rock-bottom {
+      bottom: 0;
     }
   }
 }
@@ -226,32 +231,34 @@ p {
 }
 
 .bottle {
-  &__item--three{
-    height: 3vw;
-    transform: rotate(25deg);
-    top: 55%;
-    left: 30%;
-    opacity: 0.5;
-  }
-  &__item--four {
-    height: 5vw;
-    transform: rotate(44deg);
-    top: 66%;
-    left: 55%;
-    opacity: 0.3;
-  }
-  &__item--five{
-    height: 6vw;
-    transform: rotate(76deg);
-    top: 70%;
-    left: 10%;
-    opacity: 0.9;
-  }
-  &__item--six {
-    height: 4vw;
-    transform: rotate(-54deg);
-    top: 78%;
-    left: 25%;
-    opacity: 0.5;
+  &__item {
+    &--three{
+      height: 3vw;
+      transform: rotate(25deg);
+      top: 55%;
+      left: 30%;
+      opacity: 0.5;
+    }
+    &--four {
+      height: 5vw;
+      transform: rotate(44deg);
+      top: 66%;
+      left: 55%;
+      opacity: 0.3;
+    }
+    &--five{
+      height: 6vw;
+      transform: rotate(76deg);
+      top: 70%;
+      left: 10%;
+      opacity: 0.9;
+    }
+    &--six {
+      height: 4vw;
+      transform: rotate(-54deg);
+      top: 78%;
+      left: 25%;
+      opacity: 0.5;
+    }
   }
 }
