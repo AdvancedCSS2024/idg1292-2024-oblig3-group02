@@ -1,118 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/css/style.min.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/css/style.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer
-        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer
-        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.js"></script>
-    <title>The Ocean</title>
-</head>
+        <title>The Ocean</title>
+    </head>
 
-<body>
+    <body>
 
-    <header id="header">
-        <div class="mountain">
-            <img src="images/svg/mountain.svg">
-        </div>
-        <div class="heading">
-            <img src="images/svg/heading.svg">
-        </div>
+        <header class="header">
 
-        <div class="clouds">
-            <img class="clouds__cloud" src="images/svg/clouds/Cloud1.svg">
-            <img class="clouds__cloud" src="images/svg/clouds/Cloud2.svg">
-            <img class="clouds__cloud" src="images/svg/clouds/Cloud3.svg">
-            <img class="clouds__cloud" src="images/svg/clouds/Cloud4.svg">
-            <img class="clouds__cloud" src="images/svg/clouds/Cloud5.svg">
-            <img class="clouds__cloud" src="images/svg/clouds/Cloud6.svg">
-        </div>
+            <div class="header__mountain">
+                <img src="images/svg/mountain.svg">
+            </div>
 
-        <div class="boat">
-            <div class="boat__image">
+            <div class="header__heading">
+                <img src="images/svg/heading.svg">
+            </div>
+
+            <div class="clouds">
+                <img class="clouds__cloud" src="images/svg/clouds/Cloud1.svg">
+                <img class="clouds__cloud" src="images/svg/clouds/Cloud2.svg">
+                <img class="clouds__cloud" src="images/svg/clouds/Cloud3.svg">
+                <img class="clouds__cloud" src="images/svg/clouds/Cloud4.svg">
+                <img class="clouds__cloud" src="images/svg/clouds/Cloud5.svg">
+                <img class="clouds__cloud" src="images/svg/clouds/Cloud6.svg">
+            </div>
+
+            <div class="header__boat">
                 <img src="images/svg/boat.svg">
             </div>
-        </div>
-        
-        <div class="wave"></div>
-    </header>
 
-    <main id="main">
-        
-        <div id="underwater" class="underwater">
-            <img class="underwater__item" src="images/SVG/ocean/Bottle.svg" alt="Bottle" style="height: 6vw; transform: rotate(45deg); width: auto; position: absolute; left: 60%; top: 45%; opacity: 0.5;">
-            <img class="underwater__item" src="images/SVG/ocean/bottle2.svg" alt="Bottle 2" style="height: 6vw; transform: rotate(-45deg); width: auto; position: absolute; left: 50%; top: 50%; opacity: 0.3;">
-            <img class="underwater__item" src="images/SVG/ocean/Soda.svg" alt="Soda" style="height: 6vw; transform: rotate(-25deg); width: auto; position: absolute; left: 45%; top: 70%; opacity: 0.7;">
-            <img class="underwater__item" src="images/SVG/ocean/DeadFish.svg" alt="Dead Fish" style="height: 3vw; width: auto; position: absolute; left: 80%; top: 45%; opacity: 0.5;">
-            <img class="underwater__item" src="images/SVG/ocean/DeadFish.svg" alt="Dead Fish 2" style="height: 4vw; transform: rotate(120deg); position: absolute; left: 70%; top: 40%; opacity: 0.5;">
+            <div class="header__wave"></div>
+
+        </header>
+
+        <main class="underwater">
+
+            <img class="underwater__item" src="images/SVG/ocean/Bottle.svg" alt="Bottle" style="height: 6vw; transform: rotate(45deg); width: auto; left: 60%; top: 45%; opacity: 0.5;">
+            <img class="underwater__item" src="images/SVG/ocean/bottle2.svg" alt="Bottle 2" style="height: 6vw; transform: rotate(-45deg); width: auto; left: 50%; top: 50%; opacity: 0.3;">
+            <img class="underwater__item" src="images/SVG/ocean/Soda.svg" alt="Soda" style="height: 6vw; transform: rotate(-25deg); width: auto; left: 45%; top: 70%; opacity: 0.7;">
+            <img class="underwater__item" src="images/SVG/ocean/DeadFish.svg" alt="Dead Fish" style="height: 3vw; width: auto;  left: 80%; top: 45%; opacity: 0.5;">
+            <img class="underwater__item" src="images/SVG/ocean/DeadFish.svg" alt="Dead Fish 2" style="height: 4vw; transform: rotate(120deg);  left: 70%; top: 40%; opacity: 0.5;">
 
             <div class="jelly">
-                <img class="jelly__item jelly__item--one" src="images/SVG/ocean/JellyFish1.svg" alt="Jellyfish" style="position: absolute; height: 7vw; width: auto; top: 40%; right: 35%; animation: swim-jelly-one 5s infinite;">
-                <img class="jelly__item jelly__item--two" src="images/SVG/ocean/JellyFish2.svg" alt="Jellyfish" style="position: absolute; height: 6vw; width: auto; top: 20%; transform: scaleX(-1); animation: swim-jelly-two 6s infinite; right: 50%;">
-                <img class="jelly__item jelly__item--three" src="images/SVG/ocean/JellyFish1.svg" alt="Jellyfish" style="height: 8vw; position: absolute; animation: swim-jelly-three 4s infinite; left: 20%; top: 46%;">
+                <img class="jelly__item jelly__item--one" src="images/SVG/ocean/JellyFish1.svg" alt="Jellyfish" style=" height: 7vw; width: auto; top: 40%; right: 35%;">
+                <img class="jelly__item jelly__item--two" src="images/SVG/ocean/JellyFish2.svg" alt="Jellyfish" style=" height: 6vw; width: auto; top: 20%; transform: scaleX(-1);">
+                <img class="jelly__item jelly__item--three" src="images/SVG/ocean/JellyFish1.svg" alt="Jellyfish" style="height: 8vw; left: 20%; top: 46%;">
             </div>
-
+            
             <div class="jelly__two">
-                <img class="jelly_two__item jelly_two__item--one" src="images/SVG/ocean/JellyFish1.svg" alt="Jellyfish" style="position: absolute; animation: swim-jelly-one 5s infinite; height: 4.5vw; top: 30%; right: 45%;">
-                <img class="jelly_two__item jelly_two__item--two" src="images/SVG/ocean/JellyFish2.svg" alt="Jellyfish" style="position: absolute; transform: scaleX(-1); height: 5vw; animation: swim-jelly-two 6s infinite; right: 50%; top: 5%;">
-                <img class="jelly_two__item jelly_two__item--three" src="images/SVG/ocean/JellyFish1.svg" alt="Jellyfish" style="position: absolute; height: 4vw; animation: swim-jelly-three 4s infinite; top: 30%; left: 30%;">
+                <img class="jelly_two__item jelly_two__item--one" src="images/SVG/ocean/JellyFish1.svg" alt="Jellyfish" style=" height: 4.5vw; top: 30%; right: 45%;">
+                <img class="jelly_two__item jelly_two__item--two" src="images/SVG/ocean/JellyFish2.svg" alt="Jellyfish" style=" transform: scaleX(-1); height: 5vw; right: 50%; top: 5%;">
+                <img class="jelly_two__item jelly_two__item--three" src="images/SVG/ocean/JellyFish1.svg" alt="Jellyfish" style=" height: 4vw; top: 30%; left: 30%;">
             </div>
 
             <div class="manta">
-                <img class="manta__item manta__item--one" src="images/SVG/ocean/MantaRay1.svg" alt="Manta Ray" style="animation: swim-one 5s infinite linear; position: absolute; top: 30%; right: 20%; height: 10vw; width: auto;">
+                <img class="manta__item manta__item--one" src="images/SVG/ocean/MantaRay1.svg" alt="Manta Ray" style="animation: swim-one 5s infinite linear;  top: 30%; right: 20%; height: 10vw; width: auto;">
                 <img class="manta__item manta__item--two" src="images/SVG/ocean/MantaRay1.svg" alt="Manta Ray" style="animation: swim-two 6s infinite linear; height: 7vw; width: auto;">
                 <img class="manta__item manta__item--tree" src="images/SVG/ocean/MantaRay1.svg" alt="Manta Ray" style="height: 5vw; animation: swim-three 4s infinite linear;">
             </div>
-
-
-           
-            
-            <img id="shark" class="backgroundFish" src="images/SVG/ocean/Shark1.svg">
             <!-- <img id="tetraFish" class="backgroundFish" src="images/SVG/ocean/TetraFish.svg"> -->
             <img id="whale" class="backgroundFish" src="images/SVG/ocean/Whale1.svg">
 
-            <p id="oil">Oil spills from shipping accidents and offshore drilling have devastating effects on marine life, with long-term impacts on ecosystems and local economies</p>
-            
-            <div class="map_obj" style="bottom: 0; width: 100%;">
+            <div class="underwater__item" style="bottom: 0; width: 100%;">
                 <img src="images/SVG/bg.svg">
-                <p id="shipping">Human activities like shipping, sonar exploration, and construction create underwater noise pollution, disrupting communication and navigation for marine animals like whales and dolphins</p>
+                <p id="shipping" class="fade collider trigger">Human activities like shipping, sonar exploration, and construction create underwater noise pollution, disrupting communication and navigation for marine animals like whales and dolphins</p>
             </div>
 
-            <div id="playerbox"></div>
-            <div id="sprite" class="sprite"></div>
-
-            <div class="map_obj" style="bottom: 0; width: 100%;">
+            <div class="underwater__item" style="bottom: 0; width: 100%;">
                 <div class="collider" style="width: 100%; height: 70%; bottom: 0; position: absolute;"></div>
                 <img src="images/SVG/cave_bottom.svg">
             </div>
 
-            <div class="map_obj" style="left: 0; top: 50rem; width: 60%;">
+            <div class="underwater__item" style="left: 0; top: 30vw; width: 60%;">
                 <div class="collider" style="margin: 10% 10% 0 0; width: 90%; height: 60%; position: absolute;">
-                    <p id="overfishing">Overfishing has depleted 90% of the world's large fish populations, disrupting ocean food chains and threatening marine biodiversity</p></div>
+                    <p id="overfishing">Overfishing has depleted 90% of the world's large fish populations, disrupting ocean food chains and threatening marine biodiversity</p>
+                </div>
                 <img src="images/SVG/cave_left.svg">
             </div>
 
-            <div class="map_obj" style="right: 0; top: 50rem; width: 14%;"> 
+            <div class="underwater__item" style="right: 0; top: 30vw; width: 14%;">
                 <div class="collider" style="margin: 10% 0 0 10%; width: 90%; height: 28%; position: absolute;"></div>
                 <div class="collider" style="margin: 100% 0 0 60%; width: 40%; height: 60%; position: absolute;"></div>
                 <img src="images/SVG/cave_right.svg">
             </div>
 
-            <div id="gradient-container">
-                <!-- Content here -->
-              </div>              
-              
-        </div>
-    </main>
-    <script src="scripts/diver.js"></script>
-    <script src="scripts/script.js"></script>
-</body>
+            <div id="playerbox"></div>
+            <div id="sprite" class="sprite"></div>
+            <div id="gradient-overlay"></div>
 
+        </main>
+        <script src="scripts/diver.js"></script>
+        <script src="scripts/script.js"></script>
+    </body>
 </html>

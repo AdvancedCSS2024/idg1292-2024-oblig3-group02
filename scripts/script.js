@@ -49,7 +49,7 @@ const setScale = () => {
 const createBubbles = () => {
     // Create a new element
     var bubble = document.createElement('div');
-    bubble.classList.add('bubble');
+    bubble.classList.add('underwater__bubble');
 
     // Generate random position
     var containerWidth = main.offsetWidth;

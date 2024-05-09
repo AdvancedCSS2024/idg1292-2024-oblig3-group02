@@ -1,9 +1,8 @@
-const main = document.querySelector('#main');
+const main = document.querySelector('main');
 const sprite = document.querySelector('#sprite');
 const playerbox = document.querySelector('#playerbox');
 const colliders = document.querySelectorAll('.collider');
-const underwater = document.querySelector("#underwater");
-const gradientContainer = document.getElementById('gradient-container');
+const gradient = document.getElementById('gradient-overlay');
 
 let prevInputX = 0;
 let prevInputY = 0;
@@ -77,16 +76,17 @@ const updateDiverPosition = () => {
     const isTrigger = colliderEl?.classList.contains('trigger');
     let [adjustedX, adjustedY] = [newX, newY];
 
-    adjustedX += collision.x && !isTrigger ? (collisionSide.x === 'left' ? 5 : -5) : 0;
-    adjustedY += collision.y && !isTrigger ? (collisionSide.y === 'top' ? 5 : -5) : 0;
+    adjustedX += collision.x && !isTrigger ? (collisionSide.x === 'left' ? 10 : -10) : 0;
+    adjustedY += collision.y && !isTrigger ? (collisionSide.y === 'top' ? 10 : -10) : 0;
 
     isTrigger ? colliderEl.classList.add('active') : null;
 
-    const containerTop = main.getBoundingClientRect().top;
-    const gradientX = (adjustedX / window.innerWidth) * 100;
-    const gradientY = ((adjustedY + containerTop) / window.innerHeight) * 100;
+    const gradientX = (newX / main.offsetWidth) * 100;
+    const gradientY =  (newY / main.offsetHeight ) * 100;
+    gradientStrength = gradientY / main.offsetHeight * 20;
 
-    gradientContainer.style.background = `radial-gradient(circle at ${gradientX}% ${gradientY}%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .7) 30%)`;
+
+    gradient.style.background = `radial-gradient(circle at ${gradientX}% ${gradientY}%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, ${gradientStrength}) 10%)`;
 
     sprite.style.left = playerbox.style.left = adjustedX + 'px';
     playerbox.style.top = sprite.style.top = (adjustedY < 150) ? '150px' : adjustedY + 'px';

@@ -19,3 +19,70 @@
     }
   }
   
+  @media screen and (max-width: 768px) {
+    p {
+      font-size: 2.5vw;
+    }
+  
+    #whale {
+      height: 20vw;
+      width: auto;
+      opacity: 0.2;
+      top: 40%;
+      left: 5%;
+    }
+  
+    #shark {
+      position: absolute;
+      height: 8vw;
+      top: 50%;
+      left: 55%;
+      opacity: 0.5;
+      transform: scaleX(-1);
+    }
+  }
+  
+  @media screen and (max-width: 540px) {
+    p {
+      font-size: 4vw;
+    }
+  
+    #whale {
+      position: absolute;
+      height: 20vw;
+      width: auto;
+      opacity: 0.2;
+      top: 40%;
+      left: 5%;
+      transform: scaleX(1);
+    }
+  
+    .jellyFamily {
+      position: absolute;
+      top: 60vw;
+      left: 10%;
+      height: 30vw;
+      width: 30vw;
+      opacity: 0.6;
+      padding: 1%;
+    }
+  
+    .mantaFamily {
+      position: absolute;
+      top: 50vw;
+      right: 6%;
+      height: 30vw;
+      width: 30vw;
+      opacity: 0.6;
+      padding: 1%;
+    }
+  
+    #shark {
+      position: absolute;
+      height: 8vw;
+      top: 50%;
+      left: 55%;
+      opacity: 0.5;
+      transform: scaleX(-1);
+    }
+  }

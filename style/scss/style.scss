@@ -1,5 +1,5 @@
-@use './_animations.scss' as *;
-@use './_media.scss' as *;
+@use 'animations' as *;
+@use 'media' as *;
 
 // best seen at 1500px or less
 html {
@@ -9,7 +9,9 @@ html {
 
 * {
   box-sizing: border-box;
+  font-family: calibri, sans-serif;
   overflow: hidden;
+  color: white;
 }
 
 body {
@@ -17,67 +19,79 @@ body {
 }
 
 p {
-  color: white;
-  font-family: calibri, sans-serif;
-  font-size: 2.25vw; /* Base font size as percentage of viewport width */
+  font-size: 2vw;
   opacity: 0.6;
   font-weight: 600;
 }
 
-#header {
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  background: radial-gradient(circle, #fffb96 18%, #86cfd9 19%, #5da9ac 47% );
-
-  &--hidden {
-    transform: translate(0, -150%);
-  }
-}
-
-.bubble {
+#gradient-overlay {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  background-image: url('/images/SVG/bubble.svg'); ;
-  animation: moveElement 3s linear;
-  opacity: 0;
-}
-
-main {
+  z-index: 999;
   width: 100vw;
-  position: relative;
-  background-color: #54c2e0;
-  overflow-x: hidden;
-  height: 200rem;
-}
-
-.heading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: 0;
-  width: 50vw;
-  padding: 2rem;
-  transform-origin: top left;
-  transform: translate(-50%, -50%);
-  animation: heading 2s ease-in-out;
-  filter: drop-shadow(0px 0px 8px #303f61);
-}
-
-
-
-.underwater {
-  width: 100%;
-  position: absolute;
-  top: 0;
   height: 100%;
 }
 
-.mountain {
+#sprite {
+  width: 200px;
+  height: 80px;
+  background-image: url('/images/sprite.png');
+  background-repeat: no-repeat;
+  background-size: calc(3154px / 4) calc(1068px / 3);
   position: absolute;
+}
+
+#playerbox {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  transform: translate(-50%, -50%);
+}
+
+.header {
+  height: 100vh;
   width: 100%;
-  bottom: 0;
+  overflow: hidden;
+  background: radial-gradient(circle, #fffb96 18%, #86cfd9 19%, #5da9ac 47%);
+
+  &__mountain {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+
+  &__heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50vw;
+    transform: translate(-50%, -50%);
+    animation: heading 2s ease-in-out;
+    filter: drop-shadow(0px 0px 8px #303f61);
+  }
+
+  &__wave {
+    position: absolute;
+    width: 100%;
+    bottom: -1rem;
+    height: 10rem;
+    background: url(../../images/waves.png) repeat-x;
+    background-size: 1800px 50px;
+    animation: bgscroll 10s infinite linear;
+  }
+
+  &__boat {
+    position: absolute;
+    width: 30rem;
+    left: 10vw;
+    bottom: 0;
+    animation: bob 2.8s ease-in-out infinite;
+    transform: scaleX(-1);
+    img {
+      animation: float 2s ease-in-out infinite;
+      transform-origin: center bottom;
+      width: 100%;
+    }
+  }
 }
 
 .clouds {
@@ -91,10 +105,12 @@ main {
     width: 20rem;
     position: absolute;
     animation: clouds infinite linear;
+
     &:nth-child(2n) {
       animation-direction: reverse;
     }
   }
+
   // bad attempt at making the clouds more random. they start of looking kinda shit but gets better after the animation
   // runs a few times. this could probably be done in js but this should be more efficent.
   @for $i from 1 through 6 {
@@ -108,64 +124,29 @@ main {
   }
 }
 
-.boat {
-  position: absolute;
-  width: 30rem;
-  left: 10vw;
-  bottom: 0;
-  animation: bob 2.8s ease-in-out infinite;
-  &__image {
-    animation: float 2s ease-in-out infinite;
-    transform-origin: center bottom;
-    width: 100%;
+.underwater {
+  width: 100vw;
+  position: relative;
+  background-color: #54c2e0;
+  overflow-x: hidden;
+  height: 200vh;
+
+  &__item {
+    position: absolute;
     img {
-      transform: scaleX(-1);
+      width: 100%;
     }
   }
-}
 
-.wave {
-  position: absolute;
-  width: 100%;
-  bottom: -1rem;
-  height: 10rem;
-  background: url(../../images/waves.png) repeat-x;
-  background-size: 1800px 50px;
-  animation: bgscroll 10s infinite linear;
-}
-
-.crosshair {
-  position: fixed;
-  width: 5rem;
-  height: 5rem;
-  background-color: #ffffff31;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1000;
-
-  &--text {
-    font-size: 1.5rem;
-    border-radius: 0;
+  &__bubble {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('/images/SVG/bubble.svg');
+    ;
+    animation: moveElement 5s linear;
+    opacity: 0;
   }
-}
-
-.sprite {
-  width: 200px;
-  height: 80px;
-  background-image: url('/images/sprite.png');
-  background-repeat: no-repeat;
-  background-size: calc(3154px / 4) calc(1068px / 3);
-  position: absolute;
-}
-
-.map_obj {
-  position: absolute;
-  img {
-    width: 100%;
-  }
-}
-.collider {
-  position: relative;
 }
 
 .manta {
@@ -178,7 +159,6 @@ main {
   padding: 1%;
 }
 
-//Large jellyfish familiy
 .jelly {
   position: absolute;
   top: 0;
@@ -187,9 +167,17 @@ main {
   width: 30vw;
   opacity: 0.6;
   padding: 1%;
+  &__item {
+    animation: swim infinite linear;
+  }
+  @for $i from 1 through 3 {
+    &__item:nth-child(#{$i}) {
+      animation-duration: #{10 + ($i / 10)}s;
+      animation-delay: -#{$i * 2}s;
+    }
+  }
 }
 
-//small jellyfish family
 .jelly__two {
   position: absolute;
   top: 60%;
@@ -200,71 +188,51 @@ main {
   padding: 1%;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(0deg, #000000 0%, #ffffff00 100%);
-  z-index: 999;
-}
-
-#playerbox {
-  position: absolute;
-  width: 10rem;
-  transform: translate(-50%, -50%);
-  height: 10rem;
-}
-
 #overfishing {
-  position: absolute; 
+  position: absolute;
   display: flex;
-  width: 70%; 
-  height: 70%; 
-  left: 50%; 
-  top: 50%; 
+  width: 70%;
+  height: 70%;
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
 }
 
 #plastic {
-  position: absolute; 
+  position: absolute;
   display: flex;
-  width: 70%; 
-  height: 70%; 
-  left: 37%; 
-  top: 95%; 
+  width: 70%;
+  height: 70%;
+  left: 37%;
+  top: 95%;
   transform: translate(-50%, -50%);
 }
 
 #shipping {
-  position: absolute; 
-  display: flex;
-  width: 30%; 
-  height: 70%; 
-  left: 63%; 
-  top: 70%; 
+  position: absolute;
+  width: 30%;
+  height: 70%;
+  left: 63%;
+  top: 70%;
   font-size: 1.5vw;
   transform: translate(-50%, -50%);
 }
 
 #temperature {
-  position: absolute; 
-  display: flex;
-  width: 30%; 
-  height: 70%; 
-  left: 20%; 
-  top: 35%; 
+  position: absolute;
+  width: 30%;
+  height: 70%;
+  left: 20%;
+  top: 35%;
   transform: translate(-50%, -50%);
 }
 
 #oil {
-  position: absolute; 
-  display: flex;
-  width: 25%; 
-  height: 70%; 
+  position: absolute;
+  width: 25%;
+  height: 70%;
   left: 72%;
-  top: 55%; 
+  top: 55%;
   transform: translate(-50%, -50%);
 }
 
@@ -291,96 +259,11 @@ main {
   animation: swim-back 5s linear infinite;
 }
 
-@media screen and (max-width: 768px) {
-  p {
-    font-size: 2.5vw; 
-  }
-  #whale {
-    position: absolute;
-    height: 20vw;
-    width: auto;
-    opacity: 0.2;
-    top: 40%;
-    left: 5%;
-    transform: scaleX(1);
-  }
-  .jellyFamily {
-    position: absolute;
-    top: 40vw;
-    left: 10%;
-    height: 30vw;
-    width: 30vw;
-    opacity: 0.6;
-    padding: 1%;
-  }
+.fade {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
 
-  .mantaFamily {
-    position: absolute;
-    top: 30vw;
-    right: 6%;
-    height: 30vw;
-    width: 30vw;
-    opacity: 0.6;
-    padding: 1%;
-  }
-  .jellyFamilyTwo {
-    position: absolute;
-    top: 60%;
-    right: 10%;
-    height: 30vw;
-    width: 30vw;
-    opacity: 0.3;
-    padding: 1%;
-  }
-  #shark {
-    position: absolute;
-    height: 8vw;
-    top: 50%;
-    left: 55%;
-    opacity: 0.5;
-    transform: scaleX(-1);
-  }
-}
-
-@media screen and (max-width: 540px) {
-  p {
-    font-size: 4vw; 
-  }
-  #whale {
-    position: absolute;
-    height: 20vw;
-    width: auto;
-    opacity: 0.2;
-    top: 40%;
-    left: 5%;
-    transform: scaleX(1);
-  }
-
-  .jellyFamily {
-    position: absolute;
-    top: 60vw;
-    left: 10%;
-    height: 30vw;
-    width: 30vw;
-    opacity: 0.6;
-    padding: 1%;
-  }
-
-  .mantaFamily {
-    position: absolute;
-    top: 50vw;
-    right: 6%;
-    height: 30vw;
-    width: 30vw;
-    opacity: 0.6;
-    padding: 1%;
-  }
-  #shark {
-    position: absolute;
-    height: 8vw;
-    top: 50%;
-    left: 55%;
-    opacity: 0.5;
-    transform: scaleX(-1);
+  &.active {
+    opacity: 0.7;
   }
 }
