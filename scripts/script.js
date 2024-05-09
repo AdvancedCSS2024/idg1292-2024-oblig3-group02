@@ -19,7 +19,7 @@ const scrollInput = () => {
 
     const spriteCenterY = sprite.getBoundingClientRect().top + sprite.offsetHeight / 2;
     const windowHeight = window.innerHeight;
-    const scrollThreshold = windowHeight * 0.4;
+    const scrollThreshold = windowHeight * 0.3;
 
     const scrollAmount = spriteCenterY < scrollThreshold ? -3 : (spriteCenterY > windowHeight - scrollThreshold ? 3 : 0);
     window.scrollBy(0, scrollAmount);
@@ -37,17 +37,6 @@ const debounce = (callback, delay) => {
     };
   };
 
-const throttle = (callback, delay) => {
-    let previousCall = new Date().getTime();
-    return function() {
-      const time = new Date().getTime();
-      if ((time - previousCall) >= delay) {
-        previousCall = time;
-        callback.apply(null, arguments);
-      }
-    };
-  };
-
 const setScale = () => {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
@@ -57,12 +46,40 @@ const setScale = () => {
     playerbox.style.scale = scale;
 }
 
-main.addEventListener('mousemove', throttle(handleMouseMove, 10));
-main.addEventListener('touchstart', throttle(handleMouseMove, 10));
-main.addEventListener('touchmove', throttle(handleMouseMove, 10));
+const createBubbles = () => {
+    // Create a new element
+    var bubble = document.createElement('div');
+    bubble.classList.add('bubble');
 
-main.addEventListener('mouseenter', () => throttle(mouseOverMain = true, 50));
-main.addEventListener('mouseleave', () => throttle(mouseOverMain = false, 50));
+    // Generate random position
+    var containerWidth = main.offsetWidth;
+    var containerHeight = main.offsetHeight;
+    var randomX = Math.floor(Math.random() * (containerWidth - 50));
+    var randomY = Math.floor(Math.random() * (containerHeight - 50));
+    var randomScale = Math.random() * 0.7 + 0.5;
+
+    // Set position
+    bubble.style.left = randomX + 'px';
+    bubble.style.top = randomY + 'px';
+    bubble.style.scale = randomScale;
+
+    // Append to container
+    main.appendChild(bubble);
+
+    // Remove the element after animation completes
+    bubble.addEventListener('animationend', function() {
+        main.removeChild(bubble);
+    });
+}
+
+setInterval(createBubbles, 400);
+
+main.addEventListener('mousemove', handleMouseMove);
+main.addEventListener('touchstart', handleMouseMove);
+main.addEventListener('touchmove', handleMouseMove);
+
+main.addEventListener('mouseenter', () => mouseOverMain = true);
+main.addEventListener('mouseleave', () => mouseOverMain = false);
 
 window.addEventListener('resize', debounce(setScale, 250));
 

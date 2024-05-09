@@ -64,7 +64,7 @@ const isPointInsideElement = (point, rect) => {
 };
 
 const updateDiverPosition = () => {
-    const speed = 0.008;
+    const speed = 0.03;
     const dx = prevInputX - (parseFloat(sprite.style.left) || sprite.offsetLeft);
     const dy = prevInputY - (parseFloat(sprite.style.top) || sprite.offsetTop);
     const angle = Math.atan2(dy, dx);
@@ -79,6 +79,8 @@ const updateDiverPosition = () => {
 
     adjustedX += collision.x && !isTrigger ? (collisionSide.x === 'left' ? 5 : -5) : 0;
     adjustedY += collision.y && !isTrigger ? (collisionSide.y === 'top' ? 5 : -5) : 0;
+
+    isTrigger ? colliderEl.classList.add('active') : null;
 
     const containerTop = main.getBoundingClientRect().top;
     const gradientX = (adjustedX / window.innerWidth) * 100;
