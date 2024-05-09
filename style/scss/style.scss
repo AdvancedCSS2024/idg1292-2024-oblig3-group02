@@ -152,7 +152,7 @@ p {
       width: 70%;
       top: 26%;
       left: 20%;
-      opacity: .2;
+      opacity: .1;
       transform: rotate(25deg);
 
     }
@@ -359,14 +359,14 @@ p {
     }
     &--fifteen {
       height: 3vw;
-      top: 31%;
+      top: 38%;
       left: 55%;
       transform: rotate(-14deg);
       opacity: 0.3;
     }
     &--sixteen {
       height: 6vw;
-      top: 30%;
+      top: 27%;
       left: 75%;
       transform: rotate(24deg);
       opacity: 0.6;
@@ -432,13 +432,6 @@ p {
       left: 50%;
       opacity: 0.2;
     }
-    &--fishfour {
-      height: 6vw;
-      top: 31%;
-      left: 35%;
-      transform: rotate(50deg);
-      opacity: 0.3;
-    }
     &--fishfive {
       height: 9vw;
       top: 15%;
@@ -446,19 +439,7 @@ p {
       transform: rotate(180deg);
       opacity: 0.1;
     }
-    &--fishsix {
-      height: 3vw;
-      top: 21%;
-      left: 35%;
-      opacity: 0.6;
-    }
-    &--fishseven {
-      height: 3vw;
-      top: 21%;
-      left: 65%;
-      transform: rotate(180deg);
-      opacity: 0.3;
-    }
+  
     
   }
 }
