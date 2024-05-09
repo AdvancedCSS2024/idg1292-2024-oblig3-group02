@@ -98,3 +98,15 @@
     opacity: 1;
   }
 }
+
+@keyframes trash {
+  0% {
+    margin-top: 25px;
+  }
+  50% {
+    margin-top: -25px;
+  }
+  100% {
+    margin-top: 25px;
+  }
+}

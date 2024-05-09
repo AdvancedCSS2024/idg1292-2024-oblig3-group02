@@ -7,6 +7,16 @@ const gradient = document.getElementById('gradient-overlay');
 let prevInputX = 0;
 let prevInputY = 0;
 
+function triggerText(collider, trigger) {
+    if (trigger) {
+        collider.classList.add('active');
+
+        setTimeout(function() {
+            collider.classList.remove('active');
+        }, 3000);
+    }
+}
+
 const handleMouseMove = (event) => {
     const rect = main.getBoundingClientRect();
     prevInputX = event.clientX - rect.left;
@@ -79,11 +89,11 @@ const updateDiverPosition = () => {
     adjustedX += collision.x && !isTrigger ? (collisionSide.x === 'left' ? 10 : -10) : 0;
     adjustedY += collision.y && !isTrigger ? (collisionSide.y === 'top' ? 10 : -10) : 0;
 
-    isTrigger ? colliderEl.classList.add('active') : null;
+    triggerText(colliderEl, isTrigger)
 
     const gradientX = (newX / main.offsetWidth) * 100;
     const gradientY =  (newY / main.offsetHeight ) * 100;
-    const gradientStrength = gradientY / main.offsetHeight * 15;
+    const gradientStrength = gradientY / main.offsetHeight * 50;
 
 
     gradient.style.background = `radial-gradient(circle at ${gradientX}% ${gradientY}%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, ${gradientStrength}) 10%)`;
