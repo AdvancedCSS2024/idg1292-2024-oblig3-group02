@@ -149,10 +149,12 @@ p {
       width: 100%;
     }
     &--whale {
-      width: 30%;
-      top: 50%;
-      left: 10%;
+      width: 70%;
+      top: 26%;
+      left: 20%;
       opacity: .2;
+      transform: rotate(25deg);
+
     }
     &--shark {
       top: 50%;
@@ -180,8 +182,8 @@ p {
   position: absolute;
   top: 6%;
   right: 6%;
-  height: 30%;
-  width: 30%;
+  height: 10%;
+  width: 20%;
   opacity: 0.6;
   padding: 1%;
 
@@ -194,12 +196,31 @@ p {
         animation-delay: -#{$i * 2}s;
       }
     }
+    &--one {
+      position: absolute;
+      height: 8vw;
+      width: 8vw;
+      top: 20%;
+    }
+    &--two {
+      position: absolute;
+      height: 8vw;
+      width: 8vw;
+      top: 0%;
+    }
+    &--tree {
+      position: absolute;
+      height: 8vw;
+      width: 8vw;
+      left: 50%;
+      top: 6%;
+    }
   }
 }
 
 .jelly {
   position: absolute;
-  top: 0;
+  top: 5%;
   left: 10%;
   height: 30vw;
   width: 30vw;
@@ -209,6 +230,27 @@ p {
   &__item {
     animation: swim infinite linear;
     width: 10%;
+    &--one {
+      position:absolute;
+      height: 8vw;
+      width: 8vw;
+      left: 50%;
+      top: 6%;
+    }
+    &--two {
+      position:absolute;
+      height: 8vw;
+      width: 8vw;
+      left: 50%;
+      top: 36%;
+    }
+    &--three {
+      position:absolute;
+      height: 8vw;
+      width: 8vw;
+      left: 30%;
+      top: 16%;
+    }
   }
 
   @for $i from 1 through 3 {
@@ -221,7 +263,7 @@ p {
 
 .jelly__two {
   position: absolute;
-  top: 60%;
+  top: 20%;
   right: 0%;
   height: 30vh;
   width: 30vw;
@@ -372,6 +414,52 @@ p {
       left: 35%;
       transform: rotate(-50deg);
       opacity: 0.6;
+    }
+
+    &--fishone {
+      height: 4vw;
+      top: 5%;
+      left: 55%;
+      opacity: 0.6;
+    }
+    &--fishtwo {
+      height: 3vw;
+      top: 7%;
+      left: 52%;
+      opacity: 0.4;
+    }
+    &--fishthree {
+      height: 2vw;
+      top: 6%;
+      left: 50%;
+      opacity: 0.2;
+    }
+    &--fishfour {
+      height: 6vw;
+      top: 31%;
+      left: 35%;
+      transform: rotate(50deg);
+      opacity: 0.3;
+    }
+    &--fishfive {
+      height: 9vw;
+      top: 15%;
+      left: 65%;
+      transform: rotate(180deg);
+      opacity: 0.1;
+    }
+    &--fishsix {
+      height: 3vw;
+      top: 21%;
+      left: 35%;
+      opacity: 0.6;
+    }
+    &--fishseven {
+      height: 3vw;
+      top: 21%;
+      left: 65%;
+      transform: rotate(180deg);
+      opacity: 0.3;
     }
     
   }
