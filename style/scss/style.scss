@@ -127,10 +127,11 @@ p {
 
   &__text {
     width: 100%;
-    margin-top: 50rem;
+    margin: 85rem 0;
     p {
       width: 70%;
       margin: 20rem auto;
+      font-size: 3rem;
     }
   }
   &__bubble {
@@ -148,9 +149,10 @@ p {
       width: 100%;
     }
     &--whale {
-      width: 50%;
-      top: 30%;
+      width: 30%;
+      top: 50%;
       left: 10%;
+      opacity: .2;
     }
     &--shark {
       top: 50%;
@@ -260,5 +262,13 @@ p {
       left: 25%;
       opacity: 0.5;
     }
+  }
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  &.active {
+    opacity: 1;
   }
 }

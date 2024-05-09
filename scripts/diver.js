@@ -83,18 +83,20 @@ const updateDiverPosition = () => {
 
     const gradientX = (newX / main.offsetWidth) * 100;
     const gradientY =  (newY / main.offsetHeight ) * 100;
-    const gradientStrength = gradientY / main.offsetHeight * 20;
+    const gradientStrength = gradientY / main.offsetHeight * 15;
 
 
     gradient.style.background = `radial-gradient(circle at ${gradientX}% ${gradientY}%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, ${gradientStrength}) 10%)`;
 
-    mainOffsetY = main.clientHeight;
+    const mainOffsetY = main.offsetHeight;
+    const pbOffsetY = playerbox.offsetHeight;
+
     sprite.style.left = playerbox.style.left = adjustedX + 'px';
     playerbox.style.top = sprite.style.top = (
-        (adjustedY < mainOffsetY * 0.1) ? 
-            (mainOffsetY * 0.1 + 'px') :
-            ((adjustedY > mainOffsetY - mainOffsetY * 0.1) ? 
-                (mainOffsetY - mainOffsetY * 0.1  + 'px') :
+        (adjustedY < pbOffsetY) ? 
+            (pbOffsetY + 'px') :
+            ((adjustedY > mainOffsetY - pbOffsetY) ? 
+                (mainOffsetY - pbOffsetY  + 'px') :
                 (adjustedY + 'px')
             )
     );
