@@ -314,6 +314,62 @@ p {
       transform: rotate(-124deg);
       opacity: 0.6;
     }
+    &--fifteen {
+      height: 3vw;
+      top: 31%;
+      left: 55%;
+      transform: rotate(-14deg);
+      opacity: 0.3;
+    }
+    &--sixteen {
+      height: 6vw;
+      top: 30%;
+      left: 75%;
+      transform: rotate(24deg);
+      opacity: 0.6;
+    }
+    &--seventeen {
+      height: 8vw;
+      top: 61%;
+      left: 5%;
+      transform: rotate(-124deg);
+      opacity: 0.9;
+    }
+    &--eighteen {
+      height: 5vw;
+      top: 81%;
+      left: 35%;
+      transform: rotate(24deg);
+      opacity: 0.6;
+    }
+    &--nineteen {
+      height: 9vw;
+      top: 31%;
+      left: 31%;
+      transform: rotate(74deg);
+      opacity: 0.9;
+    }
+    &--twenty {
+      height: 7vw;
+      top: 47%;
+      left: 35%;
+      transform: rotate(-24deg);
+      opacity: 0.2;
+    }
+    &--twentyone {
+      height: 5vw;
+      top: 57%;
+      left: 75%;
+      transform: rotate(24deg);
+      opacity: 0.3;
+    }
+    &--twentytwo {
+      height: 9vw;
+      top: 71%;
+      left: 35%;
+      transform: rotate(-50deg);
+      opacity: 0.6;
+    }
     
   }
 }
