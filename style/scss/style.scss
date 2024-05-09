@@ -127,10 +127,10 @@ p {
 
   &__text {
     width: 100%;
-    margin: 85rem 0;
+    margin: 145rem 0;
     p {
       width: 70%;
-      margin: 20rem auto;
+      margin: 60vh auto;
       font-size: 3rem;
     }
   }
@@ -292,6 +292,7 @@ p {
       top: 81%;
       left: 75%;
       transform: rotate(-44deg);
+      opacity: 0.3;
     }
     &--twelve {
       height: 3vw;
@@ -337,14 +338,14 @@ p {
     }
     &--eighteen {
       height: 5vw;
-      top: 81%;
+      top: 85%;
       left: 35%;
       transform: rotate(24deg);
       opacity: 0.6;
     }
     &--nineteen {
       height: 9vw;
-      top: 31%;
+      top: 32%;
       left: 31%;
       transform: rotate(74deg);
       opacity: 0.9;
