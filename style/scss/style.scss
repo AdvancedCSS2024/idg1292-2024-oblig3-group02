@@ -121,6 +121,7 @@ p {
 }
 
 .underwater {
+  overflow: hidden;
   background-color: #54c2e0;
   position: absolute;
   width: 100%;
@@ -453,8 +454,6 @@ p {
       transform: rotate(180deg);
       opacity: 0.1;
     }
-  
-    
   }
 }
 
