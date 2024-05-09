@@ -16,7 +16,7 @@ We wanted to try to use canvas as this would make our idea of making a "game" mu
 After this we started optimizing and removing styles and trying to make it more responsive and at the same time we ended up adding more trash. you can never have enough trash. i was planing on using JS to scatter the trash but we ended up just doing it by hand as with the js approach it may slow down page loading times as we are spawning a ton of elements on the screen.
 
 ## Storyboard
- ![image](https://hackmd.io/_uploads/rkLUWZ5GA.png)
+ ![image](https://raw.githubusercontent.com/AdvancedCSS2024/idg1292-2024-oblig3-group02/main/images/StoryBoard.png)
 
 ## Instructions
 ⦁	swim around and explore.
