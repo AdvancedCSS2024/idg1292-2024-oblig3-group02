@@ -16,7 +16,6 @@ const keyframes = [
 
 const scrollInput = () => {
     if (!mouseOverMain) return;
-
     const spriteCenterY = sprite.getBoundingClientRect().top + sprite.offsetHeight / 2;
     const windowHeight = window.innerHeight;
     const scrollThreshold = windowHeight * 0.3;
