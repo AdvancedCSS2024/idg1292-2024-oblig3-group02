@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/css/style.min.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.js"></script>
+
+        <title>The Ocean</title>
+    </head>
+
+    <body>
+        <header class="header">
+
+            <div class="header__mountain">
+                <img src="images/SVG/mountain.svg" alt="mountain">
+            </div>
+
+            <div class="header__heading">
+                <img src="images/SVG/heading.svg" alt="heading">
+            </div>
+
+            <div class="clouds">
+                <img class="clouds__cloud" src="images/SVG/clouds/Cloud1.svg" alt="cloud">
+                <img class="clouds__cloud" src="images/SVG/clouds/Cloud2.svg" alt="cloud">
+                <img class="clouds__cloud" src="images/SVG/clouds/Cloud3.svg" alt="cloud">
+                <img class="clouds__cloud" src="images/SVG/clouds/Cloud4.svg" alt="cloud">
+                <img class="clouds__cloud" src="images/SVG/clouds/Cloud5.svg" alt="cloud">
+                <img class="clouds__cloud" src="images/SVG/clouds/Cloud6.svg" alt="cloud">
+            </div>
+
+            <div class="header__boat">
+                <img src="images/SVG/boat.svg" alt="boat">
+            </div>
+
+            <div class="header__wave"></div>
+
+        </header>
+
+        <main class="underwater">
+            <div id="gradient-overlay"></div>
+            <div class="underwater__item" style="bottom: 0; width: 100%;">
+                <img src="images/SVG/bg.svg" alt="background under water">
+            </div>
+
+            <div class="trash">
+                <img class="underwater__item trash__item--three" src="images/SVG/ocean/bottle3.svg" alt="bottle 3">
+                <img class="underwater__item trash__item--four" src="images/SVG/ocean/bottle4.svg" alt="bottle 3">
+                <img class="underwater__item trash__item--five" src="images/SVG/ocean/bottle5.svg" alt="bottle 3">
+                <img class="underwater__item trash__item--six" src="images/SVG/ocean/bottle6.svg" alt="bottle 3">
+                <img class="underwater__item trash__item--seven" src="images/SVG/ocean/bottle8-color.svg" alt="bottle-color">
+                <img class="underwater__item trash__item--eight" src="images/SVG/ocean/bottle8-color.svg" alt="bottle-color">
+                <img class="underwater__item trash__item--nine" src="images/SVG/ocean/bottle8-color.svg" alt="bottle-color">
+                <img class="underwater__item trash__item--ten" src="images/SVG/ocean/bottle8-color.svg" alt="bottle-color">
+                <img class="underwater__item trash__item--eleven" src="images/SVG/ocean/plasticbag.svg" alt="plasticbag">
+                <img class="underwater__item trash__item--twelve" src="images/SVG/ocean/plasticbag.svg" alt="plasticbag">
+                <img class="underwater__item trash__item--thriteen" src="images/SVG/ocean/plasticbag.svg" alt="plasticbag">
+                <img class="underwater__item trash__item--fourteen" src="images/SVG/ocean/plasticbag.svg" alt="plasticbag">
+                <img class="underwater__item trash__item--fifteen" src="images/SVG/ocean/oil.svg" alt="oil">
+                <img class="underwater__item trash__item--sixteen" src="images/SVG/ocean/oil.svg" alt="oil">
+                <img class="underwater__item trash__item--seventeen" src="images/SVG/ocean/oil.svg" alt="oil">
+                <img class="underwater__item trash__item--eighteen" src="images/SVG/ocean/oil.svg" alt="oil">
+                <img class="underwater__item trash__item--nineteen" src="images/SVG/ocean/oil2.svg" alt="oil">
+                <img class="underwater__item trash__item--twenty" src="images/SVG/ocean/oil2.svg" alt="oil">
+                <img class="underwater__item trash__item--twentyone" src="images/SVG/ocean/oil2.svg" alt="oil">
+                <img class="underwater__item trash__item--twentytwo" src="images/SVG/ocean/oil2.svg" alt="oil">
+                <img class="underwater__item trash__item--fishone" src="images/SVG/ocean/TetraFish.svg" alt="oil">
+                <img class="underwater__item trash__item--fishtwo" src="images/SVG/ocean/TetraFish.svg" alt="oil">
+                <img class="underwater__item trash__item--fishthree" src="images/SVG/ocean/TetraFish.svg" alt="oil">
+                <img class="underwater__item trash__item--fishfive" src="images/SVG/ocean/TetraFish.svg" alt="oil">
+
+            </div>
+
+
+            
+
+            <div class="jelly">
+                <img class="jelly__item jelly__item--one" src="images/SVG/ocean/JellyFish1.svg" alt="Jellyfish">
+                <img class="jelly__item jelly__item--two" src="images/SVG/ocean/JellyFish2.svg" alt="Jellyfish">
+                <img class="jelly__item jelly__item--three" src="images/SVG/ocean/JellyFish1.svg" alt="Jellyfish">
+            </div>
+            
+            <div class="jelly__two">
+                <img class="jelly__item jelly__item--one" src="images/SVG/ocean/JellyFish1.svg" alt="Jellyfish">
+                <img class="jelly__item jelly__item--two" src="images/SVG/ocean/JellyFish2.svg" alt="Jellyfish">
+                <img class="jelly__item jelly__item--three" src="images/SVG/ocean/JellyFish1.svg" alt="Jellyfish">
+            </div>
+
+            <div class="manta">
+                <img class="manta__item manta__item--one" src="images/SVG/ocean/MantaRay1.svg" alt="Manta Ray">
+                <img class="manta__item manta__item--two" src="images/SVG/ocean/MantaRay1.svg" alt="Manta Ray">
+                <img class="manta__item manta__item--tree" src="images/SVG/ocean/MantaRay1.svg" alt="Manta Ray">
+            </div>
+
+            <img class="underwater__item underwater__item--whale" src="images/SVG/ocean/Whale1.svg">
+
+            <div class="underwater__text">
+                <p class="collider trigger fade">Humanity's pursuit of resources devastates coastal habitats, leading to erosion and habitat loss. Nutrient pollution creates dead zones, suffocating marine life and disrupting ecosystems.</p>
+                <p class="collider trigger fade">Coastal development encroaches upon vital habitats, exacerbating habitat loss and threatening biodiversity. Resource extraction from the ocean floor damages delicate seafloor habitats, impacting coral reefs and deep-sea ecosystems. </p>
+                <p class="collider trigger fade">Invasive species introduced through ballast water discharge and aquaculture outcompete native species, altering ecosystems. Indiscriminate waste dumping degrades water quality, threatening marine life and exacerbating plastic pollution.</p>
+                <p class="collider trigger fade">Climate change worsens threats, causing rising temperatures and ocean acidification. Coral reefs suffer bleaching events, leading to widespread coral mortality and loss of biodiversity.</p>
+                <p class="collider trigger fade">Despite challenges, efforts to combat ocean destruction persist. Scientists, activists, and communities advocate for sustainable practices and policy changes. Restoration projects aim to rehabilitate habitats, fostering resilience in the face of ongoing threats.</p>
+                <p class="collider trigger fade">It is predicted that by <span style="color: red;">2050</span>, there will be <span style="color: red;">more plastic in the ocean than fish.</span></p>
+                <p class="collider trigger fade">We need to <span style="color: red;">take action now.</span></p> 
+            </div>
+            
+            <div id="playerbox"></div>
+            <div id="sprite" class="sprite"></div>
+
+            <div class="underwater__item underwater__item--rock-bottom">
+                <img src="images/SVG/bottom.svg" alt="bottom of water with trash">
+                <div class="collider"></div>
+            </div>
+
+            <div class="underwater__item underwater__item--rock-left">
+                <div class="collider"></div>
+                <img src="images/SVG/cave_left.svg" alt="cave wall to the left">
+            </div>
+
+            <div class="underwater__item underwater__item--rock-right">
+                <div class="collider"></div>
+                <div class="collider"></div>
+                <img src="images/SVG/cave_right.svg" alt="cave wall to the right">
+            </div>
+
+        </main>
+        <script src="scripts/diver.js"></script>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>

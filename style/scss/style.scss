@@ -1,0 +1,472 @@
+@use 'animations' as *;
+
+// best seen at 1500px or less
+html,
+body {
+  font-size: 62.5%;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: calibri, sans-serif;
+  color: white;
+}
+
+p {
+  font-size: 1.3rem;
+  opacity: 0.6;
+  font-weight: 600;
+  text-align: center;
+}
+
+#gradient-overlay {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+}
+
+#sprite {
+  width: 200px;
+  height: 80px;
+  background-image: url('../../images/sprite.png');
+  background-repeat: no-repeat;
+  background-size: calc(3154px / 4) calc(1068px / 3);
+  position: absolute;
+}
+
+#playerbox {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  transform: translate(-50%, -50%);
+}
+.header {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle, #fffb96 18%, #86cfd9 19%, #5da9ac 47%);
+  position: relative;
+
+  &__mountain {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+
+  &__heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50vw;
+    transform: translate(-50%, -50%);
+    animation: heading 2s ease-in-out;
+    filter: drop-shadow(0px 0px 8px #303f61);
+    transform-origin: left center;
+  }
+
+  &__wave {
+    position: absolute;
+    width: 100%;
+    bottom: -1rem;
+    height: 10rem;
+    background: url("../../images/waves.png") repeat-x;
+    background-size: 1800px 50px;
+    animation: bgscroll 10s infinite linear;
+  }
+
+  &__boat {
+    position: absolute;
+    width: 30rem;
+    left: 10vw;
+    bottom: 0;
+    animation: bob 2.8s ease-in-out infinite;
+    transform: scaleX(-1);
+
+    img {
+      animation: float 2s ease-in-out infinite;
+      transform-origin: center bottom;
+      width: 100%;
+    }
+  }
+}
+
+.clouds {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+
+  &__cloud {
+    top: 1rem;
+    width: 20rem;
+    position: absolute;
+    animation: clouds infinite linear;
+
+    &:nth-child(2n) {
+      animation-direction: reverse;
+    }
+  }
+
+  @for $i from 1 through 6 {
+    &__cloud:nth-child(#{$i}) {
+      opacity: #{$i / 7};
+      animation-duration: #{10 + $i * 5}s;
+      animation-delay: -#{$i * 20}s;
+      scale: #{1 + $i * .25};
+      top: #{$i * 4}rem;
+    }
+  }
+}
+
+.underwater {
+  overflow: hidden;
+  background-color: #54c2e0;
+  position: absolute;
+  width: 100%;
+
+  &__text {
+    width: 100%;
+    margin: 165rem 0 3rem 0;
+    p {
+      width: 70%;
+      margin: 60vh auto;
+      font-size: 3rem;
+    }
+  }
+  &__bubble {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url("../../images/SVG/bubble.svg");
+    animation: moveElement 5s linear;
+    opacity: 0;
+  }
+
+  &__item {
+    position: absolute;
+    img {
+      width: 100%;
+    }
+    &--whale {
+      width: 70%;
+      top: 26%;
+      left: 20%;
+      opacity: .1;
+      transform: rotate(25deg);
+
+    }
+    &--shark {
+      top: 50%;
+      right: 10%;
+    }
+    &--rock-left {
+      top: 10%;
+      left: 0;
+      width: 60%;
+    }
+    &--rock-right {
+      top: 10%;
+      right: 0;
+      width: 10%;
+    }
+    &--rock-bottom {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+.manta {
+  position: absolute;
+  top: 6%;
+  right: 6%;
+  height: 10%;
+  width: 20%;
+  opacity: 0.6;
+  padding: 1%;
+
+  &__item {
+    animation: swim infinite linear;
+    width: 10%;
+    @for $i from 1 through 3 {
+      &__item:nth-child(#{$i}) {
+        animation-duration: #{10 + ($i / 10)}s;
+        animation-delay: -#{$i * 2}s;
+      }
+    }
+    &--one {
+      position: absolute;
+      height: 8vw;
+      width: 8vw;
+      top: 20%;
+    }
+    &--two {
+      position: absolute;
+      height: 8vw;
+      width: 8vw;
+      top: 0%;
+    }
+    &--tree {
+      position: absolute;
+      height: 8vw;
+      width: 8vw;
+      left: 50%;
+      top: 6%;
+    }
+  }
+}
+
+.jelly {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  height: 30vw;
+  width: 30vw;
+  opacity: 0.6;
+  padding: 1%;
+
+  &__item {
+    animation: swim infinite linear;
+    width: 10%;
+    &--one {
+      position:absolute;
+      height: 8vw;
+      width: 8vw;
+      left: 50%;
+      top: 6%;
+    }
+    &--two {
+      position:absolute;
+      height: 8vw;
+      width: 8vw;
+      left: 50%;
+      top: 36%;
+    }
+    &--three {
+      position:absolute;
+      height: 8vw;
+      width: 8vw;
+      left: 30%;
+      top: 16%;
+    }
+  }
+
+  @for $i from 1 through 3 {
+    &__item:nth-child(#{$i}) {
+      animation-duration: #{10 + ($i / 10)}s;
+      animation-delay: -#{$i * 2}s;
+    }
+  }
+}
+
+.jelly__two {
+  position: absolute;
+  top: 18%;
+  right: 0%;
+  height: 30vh;
+  width: 30vw;
+  opacity: 0.3;
+  padding: 1%;
+
+  &__item {
+    animation: swim infinite linear;
+    width: 10%;
+  }
+}
+
+.trash {
+  &__item {
+    animation: trash 6s infinite linear;
+    position: absolute;
+    &:nth-child(2n) {
+      animation-duration: 5s;
+      animation-delay: -4s;
+    }
+    &:nth-child(3n) {
+      animation-delay: -2s;
+    }
+    &:nth-child(4n) {
+      animation-delay: -5s;
+    }
+    &--three{
+      height: 3vw;
+      transform: rotate(25deg);
+      top: 55%;
+      left: 30%;
+      opacity: 0.5;
+    }
+    &--four {
+      height: 5vw;
+      transform: rotate(44deg);
+      top: 66%;
+      left: 55%;
+      opacity: 0.3;
+    }
+    &--five{
+      height: 6vw;
+      transform: rotate(76deg);
+      top: 70%;
+      left: 10%;
+      opacity: 0.9;
+    }
+    &--six {
+      height: 4vw;
+      transform: rotate(-54deg);
+      top: 78%;
+      left: 25%;
+      opacity: 0.5;
+    }
+    &--seven {
+      height: 4vw;
+      top: 65%;
+      left: 60%;
+    }
+    &--eight {
+      height: 4vw;
+      top: 51%;
+      left: 45%;
+      transform: rotate(44deg);
+      opacity: 0.3;
+    }
+    &--nine {
+      height: 5vw;
+      top: 41%;
+      left: 5%;
+      transform: rotate(74deg);
+    }
+    &--ten {
+      height: 4vw;
+      top: 51%;
+      left: 85%;
+      transform: rotate(-14deg);
+      opacity: 0.6;
+    }
+    &--eleven {
+      height: 5vw;
+      top: 81%;
+      left: 75%;
+      transform: rotate(-44deg);
+      opacity: 0.3;
+    }
+    &--twelve {
+      height: 3vw;
+      top: 30%;
+      left: 12%;
+      transform: rotate(-69deg);
+      opacity: 0.7;
+    }
+    &--thriteen {
+      height: 5vw;
+      top: 37%;
+      left: 85%;
+      transform: rotate(44deg);
+      opacity: 0.5;
+    }
+    &--fourteen {
+      height: 5vw;
+      top: 61%;
+      left: 35%;
+      transform: rotate(-124deg);
+      opacity: 0.6;
+    }
+    &--fifteen {
+      height: 3vw;
+      top: 38%;
+      left: 55%;
+      transform: rotate(-14deg);
+      opacity: 0.3;
+    }
+    &--sixteen {
+      height: 6vw;
+      top: 27%;
+      left: 75%;
+      transform: rotate(24deg);
+      opacity: 0.6;
+    }
+    &--seventeen {
+      height: 8vw;
+      top: 61%;
+      left: 5%;
+      transform: rotate(-124deg);
+      opacity: 0.9;
+    }
+    &--eighteen {
+      height: 5vw;
+      top: 85%;
+      left: 35%;
+      transform: rotate(24deg);
+      opacity: 0.6;
+    }
+    &--nineteen {
+      height: 9vw;
+      top: 35%;
+      left: 31%;
+      transform: rotate(74deg);
+      opacity: 0.9;
+    }
+    &--twenty {
+      height: 7vw;
+      top: 47%;
+      left: 35%;
+      transform: rotate(-24deg);
+      opacity: 0.2;
+    }
+    &--twentyone {
+      height: 5vw;
+      top: 57%;
+      left: 75%;
+      transform: rotate(24deg);
+      opacity: 0.3;
+    }
+    &--twentytwo {
+      height: 9vw;
+      top: 71%;
+      left: 35%;
+      transform: rotate(-50deg);
+      opacity: 0.6;
+    }
+    &--fishone {
+      height: 4vw;
+      top: 5%;
+      left: 55%;
+      opacity: 0.6;
+    }
+    &--fishtwo {
+      height: 3vw;
+      top: 7%;
+      left: 52%;
+      opacity: 0.4;
+    }
+    &--fishthree {
+      height: 2vw;
+      top: 6%;
+      left: 50%;
+      opacity: 0.2;
+    }
+    &--fishfive {
+      height: 9vw;
+      top: 15%;
+      left: 65%;
+      transform: rotate(180deg);
+      opacity: 0.1;
+    }
+  }
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  &.active {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
