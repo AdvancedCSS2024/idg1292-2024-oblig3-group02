@@ -7,7 +7,7 @@ const gradient = document.getElementById('gradient-overlay');
 let prevInputX = 0;
 let prevInputY = 0;
 
-function triggerText(collider, trigger) {
+const triggerText = (collider, trigger) => {
     if (trigger) {
         collider.classList.add('active');
 
