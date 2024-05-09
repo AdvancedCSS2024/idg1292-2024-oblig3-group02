@@ -13,7 +13,7 @@ function triggerText(collider, trigger) {
 
         setTimeout(function() {
             collider.classList.remove('active');
-        }, 3000);
+        }, 20000);
     }
 }
 
