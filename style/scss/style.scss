@@ -19,9 +19,10 @@ body {
 }
 
 p {
-  font-size: 2vw;
+  font-size: 1.3vw;
   opacity: 0.6;
   font-weight: 600;
+  text-align: center;
 }
 
 #gradient-overlay {
@@ -289,6 +290,38 @@ p {
   opacity: 0.5;
 }
 
+.bottle {
+
+  &__item--three{
+    height: 3vw;
+    transform: rotate(25deg);
+    top: 55%;
+    left: 30%;
+    opacity: 0.5;
+  }
+  &__item--four {
+    height: 5vw;
+    transform: rotate(44deg);
+    top: 66%;
+    left: 55%;
+    opacity: 0.3;
+  }
+  &__item--five{
+    height: 6vw;
+    transform: rotate(76deg);
+    top: 70%;
+    left: 10%;
+    opacity: 0.9;
+  }
+  &__item--six {
+    height: 4vw;
+    transform: rotate(-54deg);
+    top: 78%;
+    left: 25%;
+    opacity: 0.5;
+  }
+}
+
 @media screen and (max-width: 768px) {
   p {
     font-size: 2.5vw; 
@@ -382,3 +415,4 @@ p {
     transform: scaleX(-1);
   }
 }
+
