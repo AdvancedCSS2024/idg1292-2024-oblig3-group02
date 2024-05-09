@@ -54,8 +54,8 @@ const createBubbles = () => {
     // Generate random position
     var containerWidth = main.offsetWidth;
     var containerHeight = main.offsetHeight;
-    var randomX = Math.floor(Math.random() * (containerWidth - 50));
-    var randomY = Math.floor(Math.random() * (containerHeight - 50));
+    var randomX = Math.floor(Math.random() * (containerWidth - 100));
+    var randomY = Math.floor(Math.random() * (containerHeight - 200));
     var randomScale = Math.random() * 0.7 + 0.5;
 
     // Set position
